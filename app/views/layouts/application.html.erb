@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="header_title">
+          <h3><a href="/" class="header-title-btn">note List</a></h3>
+        </div>
+        <ul class="header_menu">
+          <% if user_signed_in? %>
+            <li class="header_button">
+              <a href="/">投稿する</a>
+            </li>
+            <li class="header_button">
+              <a href="/users/<% current_user.id %>">マイページ</a>
+            </li>
+            <li class="header_button">
+              <%= link_to 'サインアウト', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="header_button">
+              <%= link_to '新規登録', new_user_registration_path %>
+            </li>
+            <li class="header_button" %>
+              <%= link_to 'ログイン', new_user_session_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <%= yield %>
+    
+  </body>
+</html>

@@ -1,0 +1,172 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+.wrapper{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header{
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  border-bottom: solid 1px #D3D3D3;
+}
+.header_title{
+  height: 70px;
+  float: left;
+  padding-top: 15px;
+  /*border:solid 1px red;*/
+  margin-left: 50px;
+  font-size: 30px;
+}
+.header-title-btn{
+   color: black;
+}
+.header_menu{
+  height: 70px;
+  float:right;
+  /*border:solid 1px red;*/
+  margin-right:50px;
+  display: flex;
+}
+.header_menu li{
+  height: 40px;
+  display: inline-block;
+  margin:15px 20px;
+  padding: 1px 5px;
+  font-size: 20px;
+  background-color: #2cb696;
+  border-radius: 4px;
+}
+.header_button a{
+  line-height: 40px;
+  color: white;
+}
+.header_menu .header_button:hover{
+  background-color: rgba(44,182,150,0.7);
+}
+.devise-wrapper{
+  box-sizing: border-box;
+  width:100%;
+  height:80vh;
+}
+.devise-container{
+  width: 550px;
+  margin:30px auto;
+  border:1px solid black;
+}
+.devise-container h1{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+}
+.devise-container p{
+  font-size:20px;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+.label-wrapper{
+  width: 450px;
+  margin:30px auto;
+  font-size: 20px;
+  /*border:1px solid blue;*/
+  text-align: center;
+
+}
+.label-field{
+  width:200px;
+  height: 30px;
+  border-radius:4px;
+}
+.submit-btn{
+  width:200px;
+  height: 30px;
+  border-radius:4px;
+  background-color: #2cb696;
+  color: white;
+  font-size:20px;
+  letter-spacing: 4px;
+}
+.submit-btn:hover{
+  background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
+.border-line{
+  width:350px;
+  border-bottom: 2px solid #D3D3D3;
+  margin: 1px auto;
+}
+.more_link_box{
+  width:450px;
+  margin: 20px auto;
+  text-align: center;
+}
+.login-btn a:hover{
+  background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
+.login-btn a{
+  width: 180px;
+  height: 25px;
+  display: inline-block;
+  margin:5px auto;
+  background-color: #2cb696;
+  color: white;
+  border-radius: 4px;
+  padding: 1px 10px;
+  font-size: 15px;
+  letter-spacing: 4px;
+}
+.forgot-pass a{
+  width:180px;
+  height: 25px;
+  display: inline-block;
+  margin:15px auto;
+  border:1px solid black;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.forgot-pass a:hover{
+  background-color: rgba(192,192,192,0.4);
+}
+.forgot-pass a{
+  color: black;
+}
+.repass-btn{
+  width:180px;
+  height: 25px;
+  display: inline-block;
+  margin:5px auto;
+  border:1px solid black;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.repass-btn:hover{
+  background-color: rgba(192,192,192,0.4);
+}
