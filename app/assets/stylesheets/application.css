@@ -90,12 +90,13 @@ a{
   font-size: 20px;
   /*border:1px solid blue;*/
   text-align: center;
-
+  display: block;
 }
 .label-field{
   width:200px;
   height: 30px;
   border-radius:4px;
+  display: block;
 }
 .submit-btn{
   width:200px;

@@ -6,6 +6,7 @@ ja:
     user: ユーザー
     password_confirmation: パスワード(確認)
     remember_me: 保存する
+    nickname: ニックネーム
   date:
     abbr_day_names:
     - 日
@@ -141,6 +142,13 @@ ja:
       create: 新規登録
       submit: 保存する
       update: 更新する
+  simple_form:
+    placeholders:
+      user:
+        email: 'メールアドレスを入力'
+        password: 'パスワードを入力'
+        password_confirmation: 'パスワードを再入力'
+        nickname: 'ニックネームを入力'
   number:
     currency:
       format:
