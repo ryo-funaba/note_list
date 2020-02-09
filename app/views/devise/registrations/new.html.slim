@@ -2,28 +2,31 @@
   .devise-container
     h2 新規登録
     .border-line
+    
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
       
-    .container-form
-      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
+      .label-wrapper
+        = f.label :email,'メールアドレス'
+        = f.input :email, label:false, input_html: { class: 'form_input' }, autofocus: true
         
-        .label-wrapper
-          = f.label :email
-          = f.input :email, label:false
-          
-        .label-wrapper
-          = f.label :password
-          = f.input :password, label:false
-          
-        .label-wrapper
-          = f.label :password_confirmation
-          = f.input :password_confirmation, label:false
+      .label-wrapper
+        = f.label :password
+        = f.input :password, label:false, input_html: { class: 'form_input' }
         
-        .label-wrapper
-          = f.label :nickname
-          = f.input :nickname, label:false
-          
-        = f.submit class: 'submit-btn'
+      .label-wrapper
+        = f.label :password_confirmation,'パスワード (確認)'
+        = f.input :password_confirmation, label:false, input_html: { class: 'form_input' }
+      
+      .label-wrapper
+        = f.label :nickname
+        = f.input :nickname, label:false, input_html: { class: 'form_input' }
+        
+      .field-wrapper
+        = f.label :image,'プロフィール画像'
+        = f.input :image, label:false, as: :file, input_html: { data: { direct_upload_url: '/rails/active_storage/direct_uploads' } }
+      
+      = f.button :submit, class: "submit-btn"
         
     .border-line
     

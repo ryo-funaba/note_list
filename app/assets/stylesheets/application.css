@@ -77,6 +77,9 @@ a{
 .devise-container{
   width: 550px;
   margin:30px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /*border:1px solid black;*/
 }
 .devise-container h2{
@@ -85,34 +88,37 @@ a{
   letter-spacing: 4px;
 }
 .label-wrapper{
-  width: 450px;
-  margin:30px auto;
-  font-size: 20px;
-  /*border:1px solid blue;*/
-  text-align: center;
-  display: block;
-}
-.label-field{
   width:200px;
-  height: 30px;
+  margin:30px auto;
+  text-align: left;
+  /*border:1px solid black;*/
+}
+.form_input{
+  width:200px;
+  height: 20px;
   border-radius:4px;
-  display: block;
+}
+.field-wrapper{
+  width:200px;
+  margin:10px auto;
 }
 .submit-btn{
   width:200px;
   height: 30px;
-  border-radius:4px;
-  background-color: #2cb696;
-  color: white;
   font-size:20px;
   letter-spacing: 4px;
+  margin:50px auto;
+  border-radius:4px;
+  display: block;
+  background-color: #2cb696;
+  color: white;
 }
 .submit-btn:hover{
   background-color: rgba(44,182,150,0.7);
   cursor: pointer;
 }
 .border-line{
-  width:350px;
+  width:500px;
   border-bottom: 2px solid #D3D3D3;
   margin: 1px auto;
 }
@@ -121,30 +127,29 @@ a{
   margin: 20px auto;
   text-align: center;
 }
+.login-btn a{
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin:5px auto;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: #2cb696;
+  color: white;
+}
 .login-btn a:hover{
   background-color: rgba(44,182,150,0.7);
   cursor: pointer;
 }
-.login-btn a{
-  width: 180px;
-  height: 25px;
-  display: inline-block;
-  margin:5px auto;
-  background-color: #2cb696;
-  color: white;
-  border-radius: 4px;
-  padding: 1px 10px;
-  font-size: 15px;
-  letter-spacing: 4px;
-}
 .forgot-pass a{
-  width:180px;
-  height: 25px;
-  display: inline-block;
+  width:200px;
+  height: 30px;
+  font-size: 17px;
   margin:15px auto;
-  border:1px solid black;
   border-radius: 4px;
-  font-size: 15px;
+  border:1px solid black;
+  display: inline-block;
 }
 .forgot-pass a:hover{
   background-color: rgba(192,192,192,0.4);
