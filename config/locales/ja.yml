@@ -146,6 +146,7 @@ ja:
     placeholders:
       user:
         password: '最低６文字必要です'
+        nickname: '10文字以内'
   number:
     currency:
       format:

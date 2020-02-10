@@ -97,6 +97,7 @@ a{
   width:200px;
   height: 20px;
   border-radius:4px;
+  background-color: #E5E5E5
 }
 .field-wrapper{
   width:200px;
@@ -160,11 +161,11 @@ a{
 .repass-btn{
   width:200px;
   height: 25px;
-  display: inline-block;
   margin:5px auto;
-  border:1px solid black;
   border-radius: 4px;
   font-size: 12px;
+  border:1px solid black;
+  display: inline-block;
   cursor: pointer;
 }
 .repass-btn:hover{
