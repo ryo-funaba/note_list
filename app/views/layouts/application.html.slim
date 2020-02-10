@@ -13,23 +13,21 @@ html
       .header
         .header_title
           h3 
-            = link_to "/", class: "header_title-btn" do
-              | note List
+            = link_to "note List", root_path, class: "header_title-btn" 
+              
         
         ul.header_menu
           - if user_signed_in?
             li.header_button
-              a[href="/"]
-                | 投稿する
+              = link_to "投稿する", new_review_path
             li.header_button
-              |  <a href="/users/
-              - current_user.id
-              | ">マイページ
+              a href="/users/= current_user.id" マイページ
             li.header_button
               = link_to 'サインアウト', destroy_user_session_path, method: :delete
           - else
             li.header_button
               = link_to '新規登録', new_user_registration_path
-            |  <li class="header_button" %> 
-            = link_to 'ログイン', new_user_session_path
+            li.header_button
+              = link_to 'ログイン', new_user_session_path
+              
     = yield
