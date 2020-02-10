@@ -1,20 +1,21 @@
 doctype html
 html
   head
-    title
-      | Note
+    title note List
     |  <meta name="viewport" content="width=device-width, initial-scale=1.0" 
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  
   body
     .wrapper
       .header
         .header_title
-          h3
-            a.header-title-btn[href="/"]
+          h3 
+            = link_to "/", class: "header_title-btn" do
               | note List
+        
         ul.header_menu
           - if user_signed_in?
             li.header_button

@@ -43,8 +43,9 @@ a{
   margin-left: 50px;
   font-size: 30px;
 }
-.header-title-btn{
+.header_title-btn{
    color: black;
+   text-decoration: none;
 }
 .header_menu{
   height: 70px;
