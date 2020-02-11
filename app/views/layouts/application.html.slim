@@ -23,7 +23,7 @@ html
             li.header_button
               a href="/users/= current_user.id" マイページ
             li.header_button
-              = link_to 'サインアウト', destroy_user_session_path, method: :delete
+              = link_to 'サインアウト', destroy_user_session_path
           - else
             li.header_button
               = link_to '新規登録', new_user_registration_path
