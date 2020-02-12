@@ -3,17 +3,18 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: :new
   
   def new
-    @review = Review.new
+    @product = Product.new
+    @product.reviews.build
   end
   
   def create
-    Review.create(create_params)
+    Product.create(product_params)
     redirect_to controller: :products, action: :index
   end
   
   private
-  def create_params
-    params.require(:review).permit(:review, :rate).merge(product_id: params[:product_id], user_id: current_user.id)
+  def product_params
+    params.require(:product).permit(:url, reviews_attributes: [:rate ,:review])
   end
   
 end
