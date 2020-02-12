@@ -172,3 +172,62 @@ a{
 .repass-btn:hover{
   background-color: rgba(192,192,192,0.4);
 }
+.yield_wrapper{
+  width: 100%;
+}
+.contensts{
+  width: 55%;
+  /*border: 1px solid blue;*/
+}
+.post_area{
+  width: 85%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+  padding-left: 30px;
+  /*border: 1px solid red;*/
+}
+.post_area h2{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #D3D3D3
+}
+.review_label{
+  margin-top: 30px;
+  margin-left: 20px;
+  /*border: 1px solid pink;*/
+  font-size: 20px;
+}
+.url_input{
+  width: 450px;
+  border-radius: 4px;
+}
+.rate_input{
+  width: 35px;
+  border-radius: 4px;
+}
+.rate_label{
+  margin-right: 10px;
+}
+.rate_hint{
+  font-size: 12px;
+}
+.review_input{
+  width: 450px;
+  height: 150px;
+  border-radius: 4px;
+}
+.post-btn{
+  display: block;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin:30px 90px;
+  border-radius: 4px;
+  background-color: #2cb696;
+  color: white;
+}
+.post-btn:hover{
+  background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
