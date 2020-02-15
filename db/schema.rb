@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_050503) do
+ActiveRecord::Schema.define(version: 2020_02_12_134841) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(version: 2020_02_08_050503) do
     t.string "title"
     t.string "creater"
     t.string "image_url"
+    t.string "url"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
-    t.string "url"
     t.integer "rate"
     t.text "review"
     t.datetime "created_at", null: false
