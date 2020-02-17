@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 2020_02_15_053817) do
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
     t.string "creater"
     t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "url"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
