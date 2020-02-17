@@ -175,7 +175,7 @@ a{
 .yield_wrapper{
   width: 100%;
 }
-.contensts{
+.contents{
   width: 55%;
   /*border: 1px solid blue;*/
 }
@@ -230,4 +230,74 @@ a{
 .post-btn:hover{
   background-color: rgba(44,182,150,0.7);
   cursor: pointer;
+}
+.user_info{
+  height: 40px;
+  margin-top:40px;
+  margin-left: 40px;
+  /*border:1px solid red;*/
+}
+.user_info ul li{
+  display: inline-block;
+}
+.border_bottom{
+  border-bottom: 2px solid #D3D3D3;
+  margin-top: 5px;
+  margin-left: 40px;
+}
+.user_img{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  font-size: 25px;
+  border-radius: 50%;
+  text-align: center;
+  border:1px solid blue;
+}
+.user_name{
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+.user_edit_btn{
+  height: 30px;
+  width: 160px;
+  border-radius: 4px;
+  margin-left: 80px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #2cb696;
+}
+.user_edit_btn a{
+  line-height: 10px;
+  color: white;
+}
+.user_edit_btn:hover{
+  background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
+.search_form{
+  float: right;
+  margin-right: 10px;
+}
+.search__query{
+  height: 30px;
+  border-radius: 4px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+.btn_search{
+  height: 40px;
+  width:30px;
+  background-color: white;
+  border: none;
+}
+.btn_search:hover{
+  cursor: pointer;
+}
+.note_wrapper{
+  margin-left: 40px;
+  margin-top: 40px;
 }
