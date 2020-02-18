@@ -1,0 +1,34 @@
+.yield_wrapper
+  .contents
+    .user_info
+      ul
+        li.user_img
+          p
+            |写
+            
+        li.user_name
+          p 
+            |りょう
+            
+        li.user_edit_btn
+          = link_to "アカウント編集", edit_user_registration_path
+        li.search_form
+          = form_tag('/notes/search', method: :get) do
+            input.search__query name="keyword" placeholder="作品名で検索" type="text" value=""
+            button.btn_search title="検索" type="submit"
+               mi.fas.fa-search.seach_icon
+    .border_bottom
+    
+    .note_wrapper
+      p
+        |レビューした作品一覧
+    
+      /- @reviws.each do |reviews|
+        .note_cover
+          .note_img
+          .note_text
+            .note_title
+            ul.cover_rate
+              li.note_rate
+              li.note_like
+      
