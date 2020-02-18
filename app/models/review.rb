@@ -10,7 +10,6 @@ class Review < ApplicationRecord
   def set_url
     note = Note.find_or_initialize_by(url: url)
     note.save!
-    
     review.note = note
   end
 
