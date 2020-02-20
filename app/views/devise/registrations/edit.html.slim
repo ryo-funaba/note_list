@@ -1,42 +1,50 @@
-h2
-  | Edit 
-  = resource_name.to_s.humanize
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    div
-      | Currently waiting confirmation for: 
-      = resource.unconfirmed_email
-  .field
-    = f.label :password
-    i
-      | (leave blank if you don't want to change it)
-    br
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      br
-      em
-        = @minimum_password_length
-        |  characters minimum
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    i
-      | (we need your current password to confirm your changes)
-    br
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+.devise-wrapper
+  .devise-container
+    h2 アカウント編集
+    .border-line
+    
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      
+      .label-wrapper
+        = f.label :email,'メールアドレス'
+        = f.input :email, label:false, input_html: { class: 'form_input' }, autocomplete: "email"
+      
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        div
+          | Currently waiting confirmation for: 
+          = resource.unconfirmed_email
+      
+      .label-wrapper
+        = f.label :password, "新パスワード"
+        = f.input  :password, label:false, placeholder:"変更する場合のみ記入", input_html: { class: 'form_input' }, autocomplete: "new-password"
+        
+      .label-wrapper
+        = f.label :password_confirmation, "新パスワード(確認)"
+        = f.input :password_confirmation, label:false, input_html: { class: 'form_input' }, autocomplete: "new-password"
+      
+      .label-wrapper
+        = f.label :current_password,"現在のパスワード"
+        = f.input :current_password, label:false, input_html: { class: 'form_input' }, autocomplete: "current-password"
+      
+      .label-wrapper
+        = f.label :nickname
+        = f.input :nickname, label:false, input_html: { class: 'form_input' }
+      
+      .field-wrapper
+        = f.label :image,'プロフィール画像'
+        = f.input :image, label:false, as: :file, input_html: { data: { direct_upload_url: '/rails/active_storage/direct_uploads' } }
+      
+      = f.submit "更新する", class: "submit-btn"
+    
+    .border-line
+    
+    h3 アカウント削除
+    .user_delete_area 
+      p
+        | 本当に削除してよろしいですか？
+      = button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete, class: "user_delete_btn"
+      
+    .border-line
+      
+    = link_to "TOPに戻る", root_path, class: "backToTop"

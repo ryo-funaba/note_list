@@ -88,6 +88,11 @@ a{
   margin: 20px 0;
   letter-spacing: 4px;
 }
+.devise-container h3{
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: 4px;
+}
 .label-wrapper{
   width:200px;
   margin:30px auto;
@@ -277,6 +282,27 @@ a{
 .user_edit_btn:hover{
   background-color: rgba(44,182,150,0.7);
   cursor: pointer;
+}
+.user_delete_area{
+  width:400px;
+  margin:10px auto;
+  text-align: center;
+  /*border: 1px solid red;*/
+}
+.user_delete_area p{
+  font-size: 15px;
+}
+.user_delete_btn{
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.backToTop{
+  text-align: center;
+  margin: 20px auto;
+  color: black;
+}
+.backToTop:hover{
+  color: #2CB696
 }
 .search_form{
   float: right;
