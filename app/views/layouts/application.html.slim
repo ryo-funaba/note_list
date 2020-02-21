@@ -22,7 +22,7 @@ html
             li.header_button
               = link_to "投稿する", new_review_path
             li.header_button
-              a href="/users/= current_user.id" マイページ
+              = link_to "マイページ", user_path(current_user.id)
             li.header_button
               = link_to 'サインアウト', destroy_user_session_path
           - else
