@@ -35,8 +35,8 @@
         = f.label :image,'プロフィール画像'
         = f.input :image, label:false, as: :file
         - if current_user.image.present?
-          .profile_image_wrapper
-            = image_tag current_user.image,class: "profile_image"
+          .edit_image_wrapper
+            = image_tag current_user.image,class: "profile_image"            
           
       = f.submit "更新する", class: "submit-btn"
     

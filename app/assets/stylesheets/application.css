@@ -111,18 +111,18 @@ a{
   margin:10px auto;
   /*border:1px solid black;*/
 }
-.profile_image_wrapper{
+.edit_image_wrapper{
   width: 60px;
   height: 60px;
-  border-radius: 10%;
+  border-radius: 50%;
   margin:20px auto;
   display: block;
+  overflow: hidden;
   /*border:1px solid blue;*/
 }
 .profile_image{
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   margin:0 auto;
   display: block;
   /*border:1px solid red;*/
@@ -255,32 +255,34 @@ a{
   cursor: pointer;
 }
 .user_info{
-  height: 40px;
+  height: 60px;
   margin-top:40px;
   margin-left: 40px;
   /*border:1px solid red;*/
 }
+.user_info ul{
+  display: flex;
+}
 .user_info ul li{
   display: inline-block;
+  /*border:1px solid black;*/
 }
 .border_bottom{
   border-bottom: 2px solid #D3D3D3;
   margin-top: 5px;
   margin-left: 40px;
 }
-.user_img{
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
+.user_image_wrapper{
+  height: 60px;
+  width: 60px;
   margin-left: 10px;
-  font-size: 25px;
   border-radius: 50%;
-  text-align: center;
-  border:1px solid blue;
+  overflow: hidden;
 }
 .user_name{
   height: 40px;
   line-height: 40px;
+  margin-top: 10px;
   margin-left: 10px;
   font-size: 25px;
 }
@@ -288,13 +290,14 @@ a{
   height: 30px;
   width: 160px;
   border-radius: 4px;
-  margin-left: 30px;
+  margin-left: 10px;
+  margin-top: 15px;
   font-size: 20px;
   text-align: center;
   background-color: #2cb696;
 }
 .user_edit_btn a{
-  line-height: 10px;
+  line-height: 30px;
   color: white;
 }
 .user_edit_btn:hover{
@@ -331,13 +334,12 @@ a{
   color: #2CB696
 }
 .search_form{
-  float: right;
-  margin-right: 10px;
+  margin-left:auto;
 }
 .search__query{
   height: 30px;
   border-radius: 4px;
-  margin-top: 5px;
+  margin-top: 15px;
   border: 1px solid #ccc;
 }
 .btn_search{

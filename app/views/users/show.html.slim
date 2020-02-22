@@ -2,8 +2,8 @@
   .contents
     .user_info
       ul
-        li.user_img
-          
+        li.user_image_wrapper
+          = image_tag current_user.image,class: "profile_image"
             
         li.user_name
           = @user.nickname
