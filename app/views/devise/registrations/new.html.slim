@@ -24,7 +24,7 @@
         
       .field-wrapper
         = f.label :image,'プロフィール画像'
-        = f.input :image, label:false, as: :file, input_html: { data: { direct_upload_url: '/rails/active_storage/direct_uploads' } }
+        = f.input :image, label:false, as: :file
       
       = f.button :submit, class: "submit-btn"
         

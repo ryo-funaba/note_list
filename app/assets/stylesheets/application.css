@@ -107,7 +107,25 @@ a{
 }
 .field-wrapper{
   width:200px;
+  height: 150px;
   margin:10px auto;
+  /*border:1px solid black;*/
+}
+.profile_image_wrapper{
+  width: 60px;
+  height: 60px;
+  border-radius: 10%;
+  margin:20px auto;
+  display: block;
+  /*border:1px solid blue;*/
+}
+.profile_image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin:0 auto;
+  display: block;
+  /*border:1px solid red;*/
 }
 .submit-btn{
   width:200px;
@@ -270,7 +288,7 @@ a{
   height: 30px;
   width: 160px;
   border-radius: 4px;
-  margin-left: 80px;
+  margin-left: 30px;
   font-size: 20px;
   text-align: center;
   background-color: #2cb696;
@@ -294,7 +312,15 @@ a{
 }
 .user_delete_btn{
   font-size: 15px;
+  padding: 5px;
   margin-bottom: 20px;
+  border-radius: 6px;
+  color: white;
+  background-color: rgba(255,8,61,1);
+}
+.user_delete_btn:hover{
+  background-color:rgba(255,8,61,0.7);
+  cursor: pointer;
 }
 .backToTop{
   text-align: center;

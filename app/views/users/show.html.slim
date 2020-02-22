@@ -3,12 +3,10 @@
     .user_info
       ul
         li.user_img
-          p
-            |写
+          
             
         li.user_name
-          p 
-            |user.nickname
+          = @user.nickname
             
         li.user_edit_btn
           = link_to "アカウント編集", edit_user_registration_path
