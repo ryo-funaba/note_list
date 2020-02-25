@@ -355,3 +355,7 @@ a{
   margin-left: 40px;
   margin-top: 40px;
 }
+.border_red{
+  padding: 10px 10px;
+  border:1px solid red;
+}

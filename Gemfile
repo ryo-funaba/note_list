@@ -67,3 +67,4 @@ gem 'html2slim'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'pry-rails'
+gem "selenium-webdriver"
