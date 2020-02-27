@@ -1,7 +1,9 @@
 class Scraping
 
   require "selenium-webdriver"
-  
+  require 'active_support'
+  require 'active_support/core_ext'
+
   def self.get_products(note)
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
