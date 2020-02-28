@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   
   belongs_to :user
-  belongs_to :note, optional:true
+  belongs_to :note
   attr_accessor :url
  
   before_validation :exists_url

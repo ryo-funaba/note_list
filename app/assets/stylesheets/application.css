@@ -328,10 +328,10 @@ a{
 .backToTop{
   text-align: center;
   margin: 20px auto;
-  color: black;
+  color: #2CB696;
 }
 .backToTop:hover{
-  color: #2CB696
+  color: rgba(44,182,150,0.7);
 }
 .search_form{
   margin-left:auto;
