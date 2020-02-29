@@ -19,9 +19,7 @@ $ git branch
 **2:自分のPC上（ローカルリポジトリ）にて下記の作業を実施**
 
 ```
-$ git checkout debug-test
-    // 作業するブランチは debug-test にします？？ 
-    // ブランチ名は当日追加する機能の名前でも良さそうです。
+$ git checkout account_edit
 
 $ bundle install
 ```
