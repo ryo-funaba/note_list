@@ -1,24 +1,62 @@
-# README
+# 環境構築
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**1: 下記のURLのリポジトリをCloneする。**
 
-Things you may want to cover:
+```
+$ git clone https://github.com/ryo-funaba/note_list.git
 
-* Ruby version
+    # この作業でリモートリポジトリ -> 自分のPC（ローカル）へコピーが完了。 
+    
+$ cd note_list
 
-* System dependencies
+    # note_listフォルダへ移動。
+    
+$ git branch
 
-* Configuration
+    # 念の為、ブランチの確認。現在のブランチは master
+```
 
-* Database creation
+**2:自分のPC上（ローカルリポジトリ）にて下記の作業を実施**
 
-* Database initialization
+```
+$ git checkout debug-test
+    // 作業するブランチは debug-test にします？？ 
+    // ブランチ名は当日追加する機能の名前でも良さそうです。
 
-* How to run the test suite
+$ bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+※bundle installした時に、mysql2のGemがインストールされない可能性があります。
 
-* Deployment instructions
+その場合は、sqlite3に変更して対応。
 
-* ...
+Gemfile
+```
+# gem 'mysql2', '0.5.2' //ここをコメントアウト。代わりに下記を記載。
+*gem 'sqlite*
+```
+
+config/database.yml
+```
+default: &default
+  // adapter: mysql2 ここをコメントアウト。代わりに下記を記載。
+  *adapter**: sqlite3*
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  socket: /var/lib/mysql/mysql.sock
+```
+
+**3:DBの作成 〜 ローカル上での確認**
+```
+$ rails db:create # DB作成
+$ rails db:migrate # テーブル作成
+```
+```
+$ rails s
+```
+
+`http://localhost:3000`にアクセスしてログイン画面が表示されればOK。
+
+
