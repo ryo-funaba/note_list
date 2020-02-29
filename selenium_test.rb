@@ -5,7 +5,7 @@ require 'active_support/core_ext'
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_argument('--headless')
 driver = Selenium::WebDriver.for :chrome, options: options
-driver.get "https://note.com/papiyon0415/n/n11adbd2bbaf7"
+driver.get "https://note.com/eizen/n/n618a1a2f74c3"
 
 title = driver.find_element(:class, 'o-noteContentText__title').text if driver.find_elements(:class, 'o-noteContentText__title').size > 0
 title_image = driver.find_element(:class, 'o-noteEyecatch img')[:src] if driver.find_elements(:class, 'o-noteEyecatch img').size > 0
