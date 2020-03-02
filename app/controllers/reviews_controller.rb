@@ -8,8 +8,12 @@ class ReviewsController < ApplicationController
   end
   
   def create
-    Review.create(review_params)
-    redirect_to controller: :notes, action: :index
+    @review = Review.new(review_params)
+    if @review.save
+      redirect_to controller: :notes, action: :index
+    else
+      render "new"
+    end
   end
   
   private

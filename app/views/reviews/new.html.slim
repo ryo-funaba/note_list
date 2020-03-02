@@ -4,7 +4,15 @@
       h2 投稿画面
       
       = simple_form_for (@review) do |f|
-      
+        /= f.error_notification
+        /= f.full_error :review
+        
+        - if @review.errors.any?
+          h3.text-danger
+            | 入力した内容にエラーが
+            = @review.errors.count
+            | 件あります
+
         .review_label
           = f.label :url, "レビュー先URL"
           = f.input :url, label:false, input_html: { class: 'url_input'}, autofocus: true
