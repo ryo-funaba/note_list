@@ -23,7 +23,11 @@ a{
   text-decoration: none;
 }
 .error{
-  border:1px solid red;
+  color: red;
+  
+}
+.text-danger{
+  color: red;
 }
 .wrapper{
   height: 100%;

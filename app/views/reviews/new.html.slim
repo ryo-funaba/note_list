@@ -8,8 +8,8 @@
         /= f.full_error :review
         
         - if @review.errors.any?
-          h3.text-danger
-            | 入力した内容にエラーが
+          h4.text-danger
+            | エラーが
             = @review.errors.count
             | 件あります
 

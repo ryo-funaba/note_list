@@ -10,5 +10,6 @@ class User < ApplicationRecord
       
   # validates :nickname, presence: true
   validates :nickname, presence: true, length: { minimum: 1,　maximum: 10 }
-  validates :password, length: { maximum: 30 }
+  validates :password, length: { minimum: 6, maximum: 30 }
+  validates :image, presence: true
 end
