@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   
   belongs_to :user
-  belongs_to :note
+  belongs_to :note, optional: true
   attr_accessor :url
   
   validates :url, presence: true
@@ -26,14 +26,15 @@ class Review < ApplicationRecord
   end
   
   def set_url
-    note = Note.find_by(url: "https://note.com/kazu55555/n/nc469e52c5cae")
+    note = Note.find_by(url: url)
     if note.blank?
       # スクレイピング開始
-      product = Scraping.get_products
-      note = Note.create!(product) 
+      product = Scraping.get_products(url)
+      note = Note.create!(product)
+      note.url = url
+      note.save
     end
-    p note
-    # self.note = note
+    self.note = note
   end
 
 

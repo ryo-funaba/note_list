@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    errors:
+      models:
+        review:
+          attributes:
+            note:
+              required: 必須
   attributes:
     email: メールアドレス
     password: パスワード

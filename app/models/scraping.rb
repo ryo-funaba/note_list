@@ -4,11 +4,11 @@ class Scraping
   require 'active_support'
   require 'active_support/core_ext'
 
-  def self.get_products
+  def self.get_products(url)
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
     driver = Selenium::WebDriver.for :chrome, options: options
-    driver.get "https://note.com/kazu55555/n/nc469e52c5cae"
+    driver.get(url)
     
     title = driver.find_element(:class, 'o-noteContentText__title').text if driver.find_elements(:class, 'o-noteContentText__title').size > 0
     title_image = driver.find_element(:class, 'o-noteEyecatch img')[:src] if driver.find_elements(:class, 'o-noteEyecatch img').size > 0

@@ -12,6 +12,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to controller: :notes, action: :index
     else
+      Rails::logger::debug('---------------')
+      Rails::logger::debug(@review.errors.messages)
       render "new"
     end
   end
