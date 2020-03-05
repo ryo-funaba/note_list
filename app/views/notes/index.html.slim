@@ -1,2 +1,28 @@
-p
-  | indexページです
+.yield_wrapper
+  .contents
+    .index_title_wrapper
+      ul
+        li.index_title
+          h2 最新レビュー
+        li.search_form
+            = form_tag('/notes/search', method: :get) do
+              input.search__query name="keyword" placeholder="作品名で検索" type="text" value=""
+              button.btn_search title="検索" type="submit"
+                 mi.fas.fa-search.seach_icon
+    .border_bottom    
+    
+    ul.note_area
+      
+        li.note_contents
+          ul
+            li.note_image
+              = 
+            li.note_string
+              ul
+                li.note_title
+                
+                li.note_mark
+                  ul
+                    li.note_star
+                  
+                    li.note_like
