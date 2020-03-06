@@ -10,6 +10,10 @@ class User < ApplicationRecord
       
   # validates :nickname, presence: true
   validates :nickname, presence: true, length: { minimum: 1,　maximum: 10 }
-  validates :password, length: { minimum: 6, maximum: 30 }
   validates :image, presence: true
+  
+  def thumbnail
+    return self.avatar.variant(resize: '50x50')
+  end
+  
 end

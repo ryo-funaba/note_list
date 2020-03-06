@@ -122,16 +122,17 @@ a{
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  position: relative;
   margin:20px auto;
-  display: block;
+  display: inline-block;
   overflow: hidden;
   /*border:1px solid blue;*/
 }
 .profile_image{
-  width: 60px;
-  height: 60px;
-  margin:0 auto;
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /*border:1px solid red;*/
 }
 .submit-btn{
@@ -282,9 +283,12 @@ a{
 .user_image_wrapper{
   height: 60px;
   width: 60px;
-  margin-left: 10px;
+  position: relative;
+  margin: 0 5px;
   border-radius: 50%;
   overflow: hidden;
+  display: inline-block;
+  border:1px solid #DDDDDD;
 }
 .user_name{
   height: 40px;
@@ -387,14 +391,14 @@ a{
 .note_area{
   margin-left: 40px;
   margin-top: 20px;
-  border:1px solid pink;
+  /*border:1px solid pink;*/
 }
 .note_area li{
   list-style: none;
 }
 .note_contents{
-  height: 90px;
-  width: 650px;
+  height: 100px;
+  width: 670px;
   margin-left: 10px;
   border-radius: 4px;
   /*border:1px solid black;*/
@@ -403,25 +407,48 @@ a{
   display: flex;
 }
 .note_image{
-  height: 90px;
-  width: 171px;
-  border:1px solid blue;
+  height: 100px;
+  width: 191px;
+  /*border:1px solid blue;*/
 }
 .note_string{
-  height: 90px;
+  height: 100px;
   width:479px;
-  border:1px solid red;
+  /*border:1px solid red;*/
 }
 .note_title{
-  height: 60px;
+  height: 70px;
   width: 479px;
+  padding: 5px 0 5px 10px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border:1px solid yellow;
 }
 .note_mark{
   height: 30px;
   width: 479px;
-  border:1px solid yellow;
+  /*border:1px solid yellow;*/
 }
 .note_mark ul{
   display: flex;
+}
+.note_star{
+  height: 30px;
+  width: 288px;
+  border:1px solid purple;
+}
+.note_like{
+  height: 30px;
+  width: 191px;
+}
+.far.fa-heart{
+  height: 20px;
+  width: 60px;
+  margin: 5px auto;
+  display: block;
+}
+.title_image{
+  height: 100px;
+  width: 191px;
 }

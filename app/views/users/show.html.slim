@@ -2,9 +2,12 @@
   .contents
     .user_info
       ul
-        li.user_image_wrapper
-          = image_tag current_user.image,class: "profile_image"
-            
+        - if current_user.image.nil?
+          li.user_image_wrapper
+            = image_tag "/images/user_default.png",class: "profile_image"
+        - else
+          li.user_image_wrapper
+            = image_tag current_user.image.variant(resize: '100x100'),class: "profile_image"
         li.user_name
           = @user.nickname
             
