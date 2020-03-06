@@ -67,3 +67,4 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'pry-rails'
 gem "selenium-webdriver"
+gem "jquery-rails"
