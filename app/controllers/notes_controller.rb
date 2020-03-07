@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   end
   
   def show
-    
+    @note = Note.find(params[:id])
+    @reviews = @note.reviews.includes(:user)
   end
 end

@@ -208,7 +208,7 @@ a{
 }
 .contents{
   width: 750px;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
 }
 .post_area{
   width: 75%;
@@ -279,6 +279,12 @@ a{
   border-bottom: 2px solid #D3D3D3;
   margin-top: 1px;
   margin-left: 40px;
+}
+.border_bottom2{
+  border-bottom: 2px solid #D3D3D3;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
 }
 .user_image_wrapper{
   height: 60px;
@@ -391,7 +397,6 @@ a{
 .note_area{
   margin-left: 40px;
   margin-top: 20px;
-  /*border:1px solid pink;*/
 }
 .note_area li{
   list-style: none;
@@ -472,7 +477,148 @@ a{
   margin: 5px auto;
   display: block;
 }
-.title_image{
+.note_title_image{
   height: 100px;
   width: 191px;
+}
+.title_image_wra{
+  height: 366px;
+  width: 700px;
+  margin:30px auto;
+  display: block;
+}
+.title_image{
+  height: 366px;
+  width: 700px;
+}
+.title_wra{
+  width:700px;
+  margin: 0 auto;
+  display: block;
+}
+.note_data{
+  height: 30px;
+  width: 700px;
+  margin: 20px auto;
+  display: block;
+}
+.note_data ul{
+  display: flex;
+  list-style: none;
+}
+.like{
+  height: 30px;
+  width: 85px;
+}
+.far.fa-heart.show{
+  height: 20px;
+  width: 80px;
+  margin-left: 0;
+}
+.price{
+  height: 30px;
+  width: 100px;
+  color: #2cb696;
+  margin-left: 10px;
+}
+.url_wra{
+  height: 30px;
+  width: 160px;
+  background-color: #2cb696;
+  border-radius: 3px;
+  text-align: center;
+  margin-left: auto;
+}
+.url_wra:hover{
+  background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
+.url_wra a{
+  color: white;
+}
+.creater_wra{
+  height: 35px;
+  width: 700px;
+  margin: 25px auto;
+  margin-bottom: 0;
+  /*border:1px solid gray;*/
+}
+.creater_wra ul{
+  display: flex;
+  list-style: none;
+}
+.creater_image_wra{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  border:1px solid #DDDDDD;
+}
+.creater_image{
+  height: 35px;
+  width: 35px;
+}
+.creater_name_wra{
+  height: 35px;
+  width: 550px;
+  margin-left: 5px;
+  line-height: 35px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.rate_wra{
+  height: 35px;
+  width: 70px;
+  margin-left: auto;
+  display: block;
+  /*border:1px solid gray;*/
+}
+.fas.fa-star.show{
+  height: 35px;
+  width: 60px;
+  line-height: 35px;
+  vertical-align: middle;
+  margin-left: auto;
+  display: block;
+  /*border:1px solid red;*/
+}
+.review_area{
+  width: 700px;
+  margin: 20px auto;
+  border:1px solid pink;
+}
+.review_area ul{
+  list-style: none;
+}
+.review_wrap{
+  height: 90px;
+  width: 700px;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #b0c4de;
+}
+.reviewer{
+  height: 35px;
+  width: 700px;
+  border: 1px solid gold;
+}
+.review_image{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  border:1px solid #DDDDDD;
+}
+.no_user_image{
+  height: 108px;
+  width: 108px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

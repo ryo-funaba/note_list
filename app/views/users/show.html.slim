@@ -7,7 +7,7 @@
             = image_tag "/images/user_default.png",class: "profile_image"
         - else
           li.user_image_wrapper
-            = image_tag current_user.image.variant(resize: '100x100'),class: "profile_image"
+            = image_tag current_user.image.variant(resize: '86x86'),class: "profile_image"
         li.user_name
           = @user.nickname
             
