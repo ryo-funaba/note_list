@@ -5,4 +5,7 @@ class NotesController < ApplicationController
     # binding.pry
   end
   
+  def show
+    
+  end
 end
