@@ -1,8 +1,7 @@
 class NotesController < ApplicationController
   
   def index
-    @notes = Note.all
-    # binding.pry
+    @notes = Note.order("created_at DESC").page(params[:page]).per(8)
   end
   
   def show
