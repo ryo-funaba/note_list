@@ -603,7 +603,9 @@ a{
 .reviewer{
   height: 35px;
   width: 700px;
-  border: 1px solid gold;
+}
+.reviewer ul{
+  display: flex;
 }
 .review_image{
   height: 35px;
@@ -621,4 +623,35 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.review_name{
+  height: 35px;
+  line-height: 35px;
+  margin-left: 8px;
+}
+.review_data{
+  height: 35px;
+  width: 700px;
+  border:1px solid pink;
+}
+.review_data ul{
+  display: flex;
+}
+.review_star{
+  height: 35px;
+  width: 80px;
+  border:1px solid yellow;
+}
+.fas.fa-star.review{
+  height: 35px;
+  width: 60px;
+  line-height: 35px;
+  vertical-align: center;
+  display: inline-block;
+  border:1px solid red;
+}
+.edit_link_wrap{
+  height: 35px;
+  width: 70px;
+  border:1px solid red;
 }
