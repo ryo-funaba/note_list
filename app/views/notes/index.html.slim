@@ -29,7 +29,7 @@
                     li.note_star
                       
                         .note_star_wra
-                          i.fas.fa-star style="color:gold"
+                          i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
                         
                     li.note_price
                       - if note.price.present?
