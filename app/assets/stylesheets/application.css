@@ -409,6 +409,7 @@ a{
   width: 670px;
   margin-left: 10px;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 .note_contents ul{
   display: flex;
@@ -552,6 +553,7 @@ a{
   width: 35px;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
   display: inline-block;
 }
 .creater_image{
@@ -613,8 +615,8 @@ a{
   display: inline-block;
 }
 .no_user_image{
-  height: 108px;
-  width: 108px;
+  height: 120px;
+  width: 120px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -673,4 +675,9 @@ a{
   width: 700px;
   font-size: 15px;
   display: block;
+}
+.kaminari_wrap{
+  width: 700px;
+  margin: 50px auto;
+  text-align: center;
 }

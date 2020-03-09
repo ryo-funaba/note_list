@@ -38,3 +38,6 @@
                     li.note_like
                       - if note.like.present?
                         i.far.fa-heart style="color:red" = note.like
+      
+      .kaminari_wrap
+        = paginate @notes, outer_window: 2
