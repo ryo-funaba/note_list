@@ -18,6 +18,10 @@ class ReviewsController < ApplicationController
     end
   end
   
+  def edit
+    # @review = 
+  end
+  
   private
   def review_params
     params.require(:review).permit(:rate ,:review, :url).merge(user_id: current_user.id)

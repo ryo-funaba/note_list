@@ -208,7 +208,7 @@ a{
 }
 .contents{
   width: 750px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 .post_area{
   width: 75%;
@@ -553,7 +553,6 @@ a{
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
-  border:1px solid #DDDDDD;
 }
 .creater_image{
   height: 35px;
@@ -562,7 +561,7 @@ a{
 .creater_name_wra{
   height: 35px;
   width: 550px;
-  margin-left: 5px;
+  margin-left: 8px;
   line-height: 35px;
   display: block;
   white-space: nowrap;
@@ -588,17 +587,15 @@ a{
 .review_area{
   width: 700px;
   margin: 20px auto;
-  border:1px solid pink;
 }
 .review_area ul{
   list-style: none;
 }
 .review_wrap{
-  height: 90px;
   width: 700px;
-  margin: 20px auto;
+  margin: 30px auto;
   display: block;
-  border: 1px solid #b0c4de;
+  margin-bottom: 20px;
 }
 .reviewer{
   height: 35px;
@@ -614,7 +611,6 @@ a{
   overflow: hidden;
   position: relative;
   display: inline-block;
-  border:1px solid #DDDDDD;
 }
 .no_user_image{
   height: 108px;
@@ -628,11 +624,11 @@ a{
   height: 35px;
   line-height: 35px;
   margin-left: 8px;
+  font-size: 18px;
 }
 .review_data{
   height: 35px;
   width: 700px;
-  border:1px solid pink;
 }
 .review_data ul{
   display: flex;
@@ -640,7 +636,6 @@ a{
 .review_star{
   height: 35px;
   width: 80px;
-  border:1px solid yellow;
 }
 .fas.fa-star.review{
   height: 35px;
@@ -648,10 +643,34 @@ a{
   line-height: 35px;
   vertical-align: center;
   display: inline-block;
-  border:1px solid red;
+}
+.review_date{
+  height: 35px;
+  line-height: 35px;
+  font-size: 13px;
+  vertical-align: center;
+  display: inline-block;
 }
 .edit_link_wrap{
-  height: 35px;
-  width: 70px;
-  border:1px solid red;
+  height: 25px;
+  width: 40px;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 3px;
+  margin-top: 5px;
+  vertical-align: center;
+  text-align: center;
+  margin-left: auto;
+  border:1px solid black;
+}
+.edit_link_wrap:hover{
+  background-color: #d3d3d3;
+}
+.edit_link_wrap a{
+  color: black;
+}
+.review_text_wrap{
+  width: 700px;
+  font-size: 15px;
+  display: block;
 }
