@@ -54,6 +54,9 @@ a{
    color: black;
    text-decoration: none;
 }
+.header_title-btn:hover{
+  color: #2cb696;
+}
 .header_menu{
   height: 70px;
   float:right;
