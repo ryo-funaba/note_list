@@ -15,7 +15,7 @@ html
       .header
         .header_title
           h3 
-            = link_to "note List", root_path, class: "header_title-btn" 
+            = link_to "note List", root_path, class: "header_title-btn"
               
         
         ul.header_menu
@@ -37,4 +37,8 @@ html
               = link_to new_user_session_path
                 i.fas.fa-sign-in-alt   ログイン
               
-    = yield
+      = yield
+      
+      .footer
+        p
+          | © 2020 ryo_funaba

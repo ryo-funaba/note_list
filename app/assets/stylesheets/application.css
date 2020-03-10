@@ -34,6 +34,20 @@ a{
   width: 100%;
   margin: 0;
   padding: 0;
+  border:1px solid pink;
+}
+.footer{
+  height: 60px;
+  width: 100%;
+  margin-top: 100px;
+}
+.footer p{
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  font-size: 15px;
+  text-align: center;
+  border-top: 1px solid gray;
 }
 .header{
   width: 100%;

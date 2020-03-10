@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
   end
   
   def edit
-    # @review = 
+    @review = Review.find(params[:id])
   end
   
   private
