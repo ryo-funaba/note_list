@@ -6,38 +6,14 @@
           h2 最新レビュー
         li.search_form
             = form_tag('/notes/search', method: :get) do
-              input.search__query name="keyword" placeholder="作品名で検索" type="text" value=""
+              input.search__query name="keyword" placeholder="タイトルで検索" type="text" value=""
               button.btn_search title="検索" type="submit"
-                 mi.fas.fa-search.seach_icon
+                 i.fas.fa-search.seach_icon
     .border_bottom    
     
     ul.note_area
       - @notes.each do |note|
-        = link_to note
-          li.note_contents
-            ul
-              li.note_image
-                - if note.title_image.nil?
-                  = image_tag "/images/no_image.png", class: "note_title_image"
-                else
-                  = image_tag note.title_image, class: "note_title_image"
-              li.note_string
-                .note_title
-                  = note.title
-                .note_mark
-                  ul
-                    li.note_star
-                      
-                        .note_star_wra
-                          i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
-                        
-                    li.note_price
-                      - if note.price.present?
-                        .note_price_wra
-                          = note.price
-                    li.note_like
-                      - if note.like.present?
-                        i.far.fa-heart style="color:red" = note.like
+        = render partial: "note", locals: {note: note}
       
       .kaminari_wrap
         = paginate @notes, outer_window: 2

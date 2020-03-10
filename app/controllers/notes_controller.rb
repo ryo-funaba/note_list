@@ -9,4 +9,7 @@ class NotesController < ApplicationController
     @reviews = @note.reviews.includes(:user)
   end
   
+  def search
+   @notes = Note.where('title LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(7)
+  end
 end

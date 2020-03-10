@@ -343,7 +343,11 @@ a{
   cursor: pointer;
 }
 .backToTop{
+  height: 30px;
+  width: 150px;
+  line-height: 30px;
   text-align: center;
+  display: block;
   margin: 20px auto;
   color: #2CB696;
 }
@@ -401,9 +405,6 @@ a{
 .note_area li{
   list-style: none;
 }
-.note_area a{
-  color: black;
-}
 .note_contents{
   height: 100px;
   width: 670px;
@@ -435,6 +436,7 @@ a{
   width: 479px;
   padding: 5px 0 5px 10px;
   line-height: 30px;
+  color: black;
   overflow: hidden;
   text-overflow: ellipsis;
 }
