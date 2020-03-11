@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class ReviewsController < RankingController
   
   before_action :authenticate_user!, only: [:new, :create]
   

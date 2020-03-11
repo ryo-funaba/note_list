@@ -288,10 +288,9 @@ a{
   display: inline-block;
 }
 .border_bottom{
-  width: 92%;
+  width: 100%;
   border-bottom: 2px solid #D3D3D3;
   margin-top: 1px;
-  margin-left: 40px;
 }
 .border_bottom2{
   border-bottom: 2px solid #D3D3D3;

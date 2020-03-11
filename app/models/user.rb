@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
       
   # validates :nickname, presence: true
-  validates :nickname, presence: true, length: { minimum: 1,　maximum: 10 }
+  validates :nickname, presence: true, length: { minimum: 1,　maximum: 7 }
   validates :image, presence: true
   
   def thumbnail
