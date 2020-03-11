@@ -695,6 +695,12 @@ a{
   font-size: 15px;
   display: block;
 }
+.no_review_wrap{
+  width: 700px;
+  margin: 30px auto;
+  display: block;
+  margin-bottom: 20px;
+}
 .kaminari_wrap{
   width: 700px;
   margin: 50px auto;
