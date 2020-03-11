@@ -75,13 +75,13 @@ a{
   height: 70px;
   float:right;
   /*border:solid 1px red;*/
-  margin-right:50px;
+  margin-right:10px;
   display: flex;
 }
 .header_menu li{
   height: 40px;
   display: inline-block;
-  margin:15px 20px;
+  margin:15px 10px;
   padding: 1px 5px;
   font-size: 20px;
   background-color: #2cb696;
@@ -97,7 +97,6 @@ a{
 .devise-wrapper{
   box-sizing: border-box;
   width:100%;
-  height:80vh;
 }
 .devise-container{
   width: 550px;
@@ -222,10 +221,10 @@ a{
 }
 .yield_wrapper{
   width: 100%;
+  display: flex;
 }
 .contents{
-  width: 750px;
-  /*border: 1px solid black;*/
+  width: 65%;
 }
 .post_area{
   width: 75%;
@@ -233,7 +232,6 @@ a{
   margin-bottom: 30px;
   margin-left: 100px;
   padding-left: 30px;
-  /*border: 1px solid red;*/
 }
 .post_area h2{
   padding-bottom: 5px;
@@ -242,7 +240,6 @@ a{
 .review_label{
   margin-top: 30px;
   margin-left: 20px;
-  /*border: 1px solid pink;*/
   font-size: 20px;
 }
 .url_input{
@@ -283,16 +280,15 @@ a{
   height: 60px;
   margin-top:40px;
   margin-left: 40px;
-  /*border:1px solid red;*/
 }
 .user_info ul{
   display: flex;
 }
 .user_info ul li{
   display: inline-block;
-  /*border:1px solid black;*/
 }
 .border_bottom{
+  width: 92%;
   border-bottom: 2px solid #D3D3D3;
   margin-top: 1px;
   margin-left: 40px;
@@ -376,6 +372,7 @@ a{
 }
 .search__query{
   height: 30px;
+  width: 140px;
   border-radius: 4px;
   margin-top: 15px;
   border: 1px solid #ccc;
@@ -399,9 +396,9 @@ a{
 }
 .index_title_wrapper{
   height: 60px;
+  width: 90%;
   margin-top:40px;
   margin-left: 40px;
-  /*border:1px solid blue;*/
 }
 .index_title_wrapper ul{
   display: flex;
@@ -424,7 +421,7 @@ a{
 }
 .note_contents{
   height: 100px;
-  width: 670px;
+  width: 95%;
   margin-left: 10px;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -435,11 +432,10 @@ a{
 .note_image{
   height: 100px;
   width: 191px;
-  /*border:1px solid blue;*/
 }
 .note_string{
   height: 100px;
-  width:479px;
+  width:67%;
   border-radius: 5px;
   border-top: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
@@ -450,7 +446,7 @@ a{
 }
 .note_title{
   height: 70px;
-  width: 479px;
+  width: 100%;
   padding: 5px 0 5px 10px;
   line-height: 30px;
   color: black;
@@ -459,7 +455,7 @@ a{
 }
 .note_mark{
   height: 30px;
-  width: 479px;
+  width: 100%;
   /*border:1px solid yellow;*/
 }
 .note_mark ul{
@@ -494,7 +490,7 @@ a{
 .far.fa-heart{
   height: 20px;
   width: 60px;
-  margin: 5px auto;
+  /*margin: 5px auto;*/
   display: block;
 }
 .note_title_image{
@@ -502,23 +498,23 @@ a{
   width: 191px;
 }
 .title_image_wra{
-  height: 366px;
-  width: 700px;
+  height: 350px;
+  width: 90%;
   margin:30px auto;
   display: block;
 }
 .title_image{
-  height: 366px;
-  width: 700px;
+  height: 100%;
+  width: 100%;
 }
 .title_wra{
-  width:700px;
+  width:90%;
   margin: 0 auto;
   display: block;
 }
 .note_data{
   height: 30px;
-  width: 700px;
+  width: 90%;
   margin: 20px auto;
   display: block;
 }
@@ -531,13 +527,14 @@ a{
   width: 85px;
 }
 .far.fa-heart.show{
-  height: 20px;
+  height: 30px;
   width: 80px;
-  margin-left: 0;
+  line-height: 30px;
 }
 .price{
   height: 30px;
   width: 100px;
+  line-height: 30px;
   color: #2cb696;
   margin-left: 10px;
 }
@@ -558,7 +555,7 @@ a{
 }
 .creater_wra{
   height: 35px;
-  width: 700px;
+  width: 90%;
   margin: 25px auto;
   margin-bottom: 0;
   /*border:1px solid gray;*/
@@ -606,21 +603,22 @@ a{
   /*border:1px solid red;*/
 }
 .review_area{
-  width: 700px;
+  width: 90%;
+  display: block;
   margin: 20px auto;
 }
 .review_area ul{
   list-style: none;
 }
 .review_wrap{
-  width: 700px;
+  width: 100%;
   margin: 30px auto;
   display: block;
   margin-bottom: 20px;
 }
 .reviewer{
   height: 35px;
-  width: 700px;
+  width: 100%;
 }
 .reviewer ul{
   display: flex;
@@ -649,7 +647,7 @@ a{
 }
 .review_data{
   height: 35px;
-  width: 700px;
+  width: 100%;
 }
 .review_data ul{
   display: flex;
@@ -691,18 +689,22 @@ a{
   color: black;
 }
 .review_text_wrap{
-  width: 700px;
+  width: 100%;
   font-size: 15px;
   display: block;
 }
 .no_review_wrap{
-  width: 700px;
+  width: 100%;
   margin: 30px auto;
   display: block;
   margin-bottom: 20px;
 }
 .kaminari_wrap{
-  width: 700px;
+  width: 100%;
   margin: 50px auto;
   text-align: center;
+}
+.ranking_wra{
+  width: 300px;
+  /*border:1px solid blue;*/
 }
