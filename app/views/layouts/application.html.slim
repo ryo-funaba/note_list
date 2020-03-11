@@ -36,8 +36,36 @@ html
             li.header_button
               = link_to new_user_session_path
                 i.fas.fa-sign-in-alt   ログイン
-              
-      = yield
+       
+      .yield_container      
+        .yield_wrap
+          = yield
+        .ranking_container
+          .rank_title
+            h3
+              i.fas.fa-crown ランキング 
+            .border_bottom
+            
+          ul
+            - @ranking.each do |ranking|
+              = link_to ranking
+                li.ranking_wrap
+                  .trophy
+                    i.fas.fa-trophy style="color:gold"
+                  .ranking_data
+                    .ranking_image
+                      - if ranking.title_image.nil?
+                        = image_tag "/images/no_image.png", class: "rank_title_image"
+                      else
+                        = image_tag ranking.title_image, class: "rank_title_image"
+                    .ranking_title
+                      = ranking.title
+            
+            
+            
+            
+            
+            
       
       .footer
         p

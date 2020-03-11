@@ -1,4 +1,4 @@
-class UsersController < RankingController
+class UsersController < RankingsController
   
   def show
     @user = User.find(params[:id])

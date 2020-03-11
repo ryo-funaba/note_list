@@ -1,4 +1,4 @@
-class NotesController < RankingController
+class NotesController < RankingsController
   
   def index
     @notes = Note.order("created_at DESC").page(params[:page]).per(7)
