@@ -62,7 +62,9 @@ a{
   font-size: 30px;
 }
 .header_title-btn{
-   height: 70px;
+   height: 64px;
+   margin-top: 3px;
+   margin-bottom: 3px;
 }
 .header_title-btn:hover{
   color: #2cb696;
@@ -724,6 +726,15 @@ a{
 }
 .trophy{
   width: 10%;
+}
+.rank-1{
+  color: gold;
+}
+.rank-2{
+  color: silver;
+}
+.rank-3{
+  color: #BA6E40;
 }
 .fas.fa-trophy{
   height: 30px;
