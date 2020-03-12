@@ -14,8 +14,8 @@ html
     .wrapper
       .header
         .header_title
-          h3 
-            = link_to "note List", root_path, class: "header_title-btn"
+          = link_to root_path
+            = image_tag "/images/note_title.png", class: "header_title-btn"
               
         
         ul.header_menu
@@ -40,26 +40,27 @@ html
       .yield_container      
         .yield_wrap
           = yield
-        .ranking_container
-          .rank_title
-            h3
-              i.fas.fa-crown ランキング 
-            .border_bottom
-            
-          ul
-            - @ranking.each do |ranking|
-              = link_to ranking
-                li.ranking_wrap
-                  .trophy
-                    i.fas.fa-trophy style="color:gold"
-                  .ranking_data
-                    .ranking_image
-                      - if ranking.title_image.nil?
-                        = image_tag "/images/no_image.png", class: "rank_title_image"
-                      else
-                        = image_tag ranking.title_image, class: "rank_title_image"
-                    .ranking_title
-                      = ranking.title
+        - if @ranking.present?
+          .ranking_container
+            .rank_title
+              h3
+                i.fas.fa-crown ランキング 
+              .border_bottom
+              
+            ul
+              - @ranking.each.with_index(1) do |ranking, index|
+                = link_to ranking
+                  li.ranking_wrap
+                    .trophy
+                      i.fas.fa-trophy class = "rank-#{index}"
+                    .ranking_data
+                      .ranking_image
+                        - if ranking.title_image.nil?
+                          = image_tag "/images/no_image.png", class: "rank_title_image"
+                        else
+                          = image_tag ranking.title_image, class: "rank_title_image"
+                      .ranking_title
+                        = ranking.title
             
             
             
