@@ -62,9 +62,9 @@ a{
   font-size: 30px;
 }
 .header_title-btn{
-   height: 64px;
-   margin-top: 3px;
-   margin-bottom: 3px;
+   height: 48px;
+   margin-top: 12px;
+   margin-bottom: 12px;
 }
 .header_title-btn:hover{
   color: #2cb696;
@@ -222,10 +222,7 @@ a{
 }
 .post_area{
   width: 75%;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 100px;
-  padding-left: 30px;
+  margin:50px auto;
 }
 .post_area h2{
   padding-bottom: 5px;
@@ -237,11 +234,11 @@ a{
   font-size: 20px;
 }
 .url_input{
-  width: 450px;
+  width: 85%;
   border-radius: 4px;
 }
 .rate_input{
-  width: 35px;
+  width: 6%;
   border-radius: 4px;
 }
 .rate_label{
@@ -251,23 +248,40 @@ a{
   font-size: 12px;
 }
 .review_input{
-  width: 450px;
+  width: 85%;
   height: 150px;
   border-radius: 4px;
 }
 .post-btn{
   display: block;
-  width: 300px;
+  width: 40%;
   height: 40px;
   font-size: 20px;
   letter-spacing: 5px;
-  margin:30px 90px;
+  margin:30px 70px;
   border-radius: 4px;
   background-color: #2cb696;
   color: white;
 }
 .post-btn:hover{
   background-color: rgba(44,182,150,0.7);
+  cursor: pointer;
+}
+.destroy_btn{
+  display: block;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin:30px 70px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgba(255,8,61,1);
+  color: white;
+}
+.destroy_btn:hover{
+  background-color: rgba(255,8,61,0.7);
   cursor: pointer;
 }
 .user_info{

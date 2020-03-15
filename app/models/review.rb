@@ -7,7 +7,6 @@ class Review < ApplicationRecord
   validates :url, presence: true
   validates :rate, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
   validates :review, presence: true, length: { minimum: 2,maximum: 400 }
-  
   before_validation :exists_url
   before_save :set_url
   
