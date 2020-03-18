@@ -1,0 +1,70 @@
+.yield_wrapper
+  .contents
+    .title_image_wra
+      - if @note.title_image.nil?
+        = image_tag "/images/no_image.png", class: "title_image"
+      else
+        = image_tag @note.title_image, class: "title_image"
+    
+    .title_wra
+      h3 = @note.title
+      
+    .note_data
+      ul
+        li.like
+          - if @note.like
+            i.far.fa-heart.show style="color:red" = @note.like
+        li.price
+          - if @note.price
+            = @note.price
+        li.url_wra
+          = link_to "作品ページ", "#{@note.url}", :target=>["_blank"]
+          
+    .creater_wra
+      ul
+        li.creater_image_wra
+          - if @note.creater_image.nil?
+            = image_tag "/images/user_default.png", class: "no_user_image"
+          else
+            = image_tag @note.creater_image, class: "creater_image"
+        li.creater_name_wra
+          = @note.creater
+        li.rate_wra
+          - if @note.reviews.average(:rate).present?
+            i.fas.fa-star.show style="color:gold" = @note.reviews.average(:rate).round
+          
+    .border_bottom2
+    
+    .review_area
+      h3
+        i.far.fa-comments レビュー
+      - if @reviews.empty?  
+        .no_review_wrap
+          p
+            |レビューはまだありません
+      else
+        ul
+          - @reviews.each do |review|
+            li.review_wrap
+              .reviewer
+                ul
+                  li.review_image
+                    - if review.user.image.nil?
+                      = image_tag "/images/user_default.png", class: "no_user_image"
+                    else
+                      = image_tag review.user.image.variant(resize: '50x50'), class: "profile_image"
+                  li.review_name
+                    = review.user.nickname
+                  
+              .review_data
+                ul
+                  li.review_star
+                    i.fas.fa-star.review style="color:gold" =review.rate
+                  li.review_date
+                    = l review.updated_at,format: :short
+                  - if user_signed_in? && current_user.id == review.user_id
+                    li.edit_link_wrap
+                      = link_to "編集", edit_note_review_path(@note,review), class: "edit_link"
+
+              .review_text_wrap
+                = simple_format(h(review.review), {}, wrapper_tag: "div", class: "review_text")

@@ -1,0 +1,26 @@
+= link_to note
+  li.note_contents
+    ul
+      li.note_image
+        - if note.title_image.nil?
+          = image_tag "/images/no_image.png", class: "note_title_image"
+        else
+          = image_tag note.title_image, class: "note_title_image"
+      li.note_string
+        .note_title
+          = note.title
+        .note_mark
+          ul
+            li.note_star
+              
+                .note_star_wra
+                  - if note.reviews.average(:rate).present?
+                    i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
+                
+            li.note_price
+              - if note.price.present?
+                .note_price_wra
+                  = note.price
+            li.note_like
+              - if note.like.present?
+                i.far.fa-heart style="color:red" = note.like

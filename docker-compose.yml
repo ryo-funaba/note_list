@@ -1,0 +1,31 @@
+# 開発環境用のdocker-compose
+version: '3'
+
+services:
+ database:
+   restart: always
+   image: mysql:5.7
+   ports:
+     - 4306:3306
+   volumes:
+     - mysql-datavolume:/var/lib/mysql
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+
+ app:
+   build:
+     context: .
+     dockerfile: ./docker/development/Dockerfile
+   ports:
+     - "4000:4000"
+   volumes:
+     - .:/note
+   depends_on:
+     - database
+
+
+volumes:
+ bundle:
+   driver: local
+ mysql-datavolume:
+   driver: local

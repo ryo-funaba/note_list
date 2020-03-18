@@ -1,0 +1,26 @@
+.yield_wrapper
+  .contents
+    .index_title_wrapper
+      ul
+        li.index_title
+          h2 検索結果
+        li.search_form
+            = form_tag('/notes/search', method: :get) do
+              input.search__query name="keyword" placeholder="タイトルで検索" type="text" value=""
+              button.btn_search title="検索" type="submit"
+                 i.fas.fa-search.seach_icon
+    .border_bottom    
+    
+    ul.note_area
+      - if @notes.empty?
+        p
+          |検索結果はありません
+      else
+        - @notes.each do |note|
+          = render partial: "note", locals: {note: note}
+
+      = link_to root_path, class: "backToTop" do
+        i.fas.fa-home  TOPに戻る
+      
+      .kaminari_wrap
+        = paginate @notes, outer_window: 2
