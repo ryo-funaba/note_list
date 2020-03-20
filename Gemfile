@@ -68,3 +68,7 @@ gem 'kaminari'
 gem 'pry-rails'
 gem "selenium-webdriver"
 gem "jquery-rails"
+
+group :production do
+  gem 'rails_12factor'
+end
