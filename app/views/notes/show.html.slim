@@ -25,7 +25,7 @@
         li.creater_image_wra
           - if @note.creater_image.nil?
             = image_tag "/images/user_default.png", class: "no_user_image"
-          else
+          - else
             = image_tag @note.creater_image, class: "creater_image"
         li.creater_name_wra
           = @note.creater
@@ -51,7 +51,7 @@
                   li.review_image
                     - if review.user.image.nil?
                       = image_tag "/images/user_default.png", class: "no_user_image"
-                    else
+                    - else
                       = image_tag review.user.image.variant(resize: '50x50'), class: "profile_image"
                   li.review_name
                     = review.user.nickname
