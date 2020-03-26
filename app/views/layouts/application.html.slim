@@ -57,7 +57,7 @@ html
                       .ranking_image
                         - if ranking.title_image.nil?
                           = image_tag "/images/no_image.png", class: "rank_title_image"
-                        else
+                        - else
                           = image_tag ranking.title_image, class: "rank_title_image"
                       .ranking_title
                         = ranking.title

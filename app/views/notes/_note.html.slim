@@ -4,7 +4,7 @@
       li.note_image
         - if note.title_image.nil?
           = image_tag "/images/no_image.png", class: "note_title_image"
-        else
+        - else
           = image_tag note.title_image, class: "note_title_image"
       li.note_string
         .note_title
