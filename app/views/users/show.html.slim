@@ -9,7 +9,7 @@
           li.user_image_wrapper
             = image_tag current_user.image.variant(resize: '86x86'),class: "profile_image"
         li.user_name
-          = @user.nickname
+          = current_user.nickname
             
         li.user_edit_btn
           = link_to "アカウント編集", edit_user_registration_path
