@@ -1,7 +1,7 @@
 class NotesController < RankingsController
   
   def index
-    @notes = Note.order("created_at DESC").page(params[:page]).per(7)
+    @notes = Note.order(created_at: :desc).page(params[:page]).per(7)
   end
   
   def show

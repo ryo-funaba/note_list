@@ -48,19 +48,20 @@ html
               .border_bottom
               
             ul
-              - @ranking.each.with_index(1) do |ranking, index|
-                = link_to ranking
+              - @ranking.each.with_index(1) do |review, index|
+                - note = review.note
+                = link_to note
                   li.ranking_wrap
                     .trophy
                       i.fas.fa-trophy class = "rank-#{index}"
                     .ranking_data
                       .ranking_image
-                        - if ranking.title_image.nil?
+                        - if note.title_image.nil?
                           = image_tag "/images/no_image.png", class: "rank_title_image"
                         - else
-                          = image_tag ranking.title_image, class: "rank_title_image"
+                          = image_tag note.title_image, class: "rank_title_image"
                       .ranking_title
-                        = ranking.title
+                        = note.title
             
             
             

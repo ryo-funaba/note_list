@@ -7,9 +7,9 @@
             = image_tag "/images/user_default.png",class: "profile_image"
         - else
           li.user_image_wrapper
-            = image_tag current_user.image.variant(resize: '86x86'),class: "profile_image"
+            = image_tag current_user.image.variant(resize: '86x86'),class: "profile_image", style: "width: 60px;"
         li.user_name
-          = @user.nickname
+          = current_user.nickname
             
         li.user_edit_btn
           = link_to "アカウント編集", edit_user_registration_path
@@ -26,7 +26,7 @@
           |まだレビューしていません
       - else
         - @notes.each do |note|
-          = render partial: "/notes/note", locals: {note: note}
+          = render partial: "/notes/note", locals: { note: note }
 
       = link_to root_path, class: "backToTop" do
         i.fas.fa-home  TOPに戻る
