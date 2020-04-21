@@ -12,7 +12,7 @@
       
       .label-wrapper
         = f.label :password
-        = f.input :password, label:false, input_html: { class: 'form_input', autocomplete: 'current_password' }, placeholder:false
+        = f.input :password, label:false, input_html: { class: 'form_input', autocomplete: 'current_password', id: 'password'}, placeholder:false
         
      
       - if devise_mapping.rememberable?
