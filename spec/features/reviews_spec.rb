@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature 'レビュー', type: :feature  do
-  let(:user) { create(:user, email: 'test@example.com', nickname: 'test_user') }
-  let!(:note) { create()}
+  let(:user) { create(:user, email: "test@example.com", nickname: "test_user") }
+  let!(:note) { create(:note)}
+  let!(:review) { create(:review)}
   
   background do
     user.password = 'password'
@@ -25,7 +26,7 @@ RSpec.feature 'レビュー', type: :feature  do
   # end
   
   scenario "投稿を削除する" do
-    visit edit_note_review_path(Review.last)
+    visit edit_note_review_path(note, Review.last)
     expect(page).to have_content '参考になった'
     # click_link "削除する"
     # expect(current_path).to eq root_path
