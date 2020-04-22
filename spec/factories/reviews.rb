@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :review do
-    url { 'https://note.com/daikawai/n/nf5bdcba44182' }
+    url { "https://note.com/daikawai/n/nf5bdcba44182" }
     rate { 5 }
-    review { 'いいね' }
+    review { "初レビュー" }
     note_id { 1 }
     note
     user

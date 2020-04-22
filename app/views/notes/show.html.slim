@@ -49,10 +49,10 @@
               .reviewer
                 ul
                   li.review_image
-                    - if review.user.image.nil?
-                      = image_tag "/images/user_default.png", class: "no_user_image"
-                    - else
+                    - if review.user.image.attached?
                       = image_tag review.user.image.variant(resize: '50x50'), class: "profile_image"
+                    - else
+                      = image_tag "/images/user_default.png", class: "no_user_image"
                   li.review_name
                     = review.user.nickname
                   
