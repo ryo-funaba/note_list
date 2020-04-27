@@ -1,4 +1,4 @@
-.yield_wrapper
+.contents_wra
   .contents
     .title_image_wra
       - if @note.title_image.nil?
@@ -68,3 +68,5 @@
 
               .review_text_wrap
                 = simple_format(h(review.review), {}, wrapper_tag: "div", class: "review_text")
+
+  = render partial: "layouts/ranking"
