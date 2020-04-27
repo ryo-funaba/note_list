@@ -217,8 +217,14 @@ a{
 .repass-btn:hover{
   background-color: rgba(192,192,192,0.4);
 }
+.contents_wra{
+  width:100%;
+  display: flex;
+  border: 1px solid blue;
+}
 .contents{
-  width: 100%;
+  width: 65%;
+  border: 1px solid pink;
 }
 .post_area{
   width: 75%;
@@ -713,9 +719,6 @@ a{
 .yield_container{
   width: 100%;
   display: flex;
-}
-.yield_wrap{
-  width: 65%;
 }
 .ranking_container{
   height: 100%;

@@ -37,10 +37,9 @@ html
               = link_to new_user_session_path
                 i.fas.fa-sign-in-alt   ログイン
        
-      .yield_container      
-        .yield_wrap
-          = yield
-        - if @ranking.present?
+      .yield_container
+        = yield
+        /- if @ranking.present?
           .ranking_container
             .rank_title
               h3
@@ -61,13 +60,6 @@ html
                           = image_tag ranking.title_image, class: "rank_title_image"
                       .ranking_title
                         = ranking.title
-            
-            
-            
-            
-            
-            
-      
       .footer
         p
           | © 2020 ryo_funaba
