@@ -17,25 +17,5 @@
       
       .kaminari_wrap
         = paginate @notes, outer_window: 2
-        
-  - if @ranking.present?
-    .ranking_container
-      .rank_title
-        h3
-          i.fas.fa-crown 注目度ランキング 
-        .border_bottom
-        
-      ul
-        - @ranking.each.with_index(1) do |ranking, index|
-          = link_to ranking
-            li.ranking_wrap
-              .trophy
-                i.fas.fa-trophy class = "rank-#{index}"
-              .ranking_data
-                .ranking_image
-                  - if ranking.title_image.nil?
-                    = image_tag "/images/no_image.png", class: "rank_title_image"
-                  - else
-                    = image_tag ranking.title_image, class: "rank_title_image"
-                .ranking_title
-                  = ranking.title
+   
+  = render partial: "layouts/ranking"
