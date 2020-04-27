@@ -1,4 +1,4 @@
-.yield_wrapper
+.contents_wra
   .contents
     .index_title_wrapper
       ul
@@ -24,3 +24,5 @@
       
       .kaminari_wrap
         = paginate @notes, outer_window: 2
+        
+  = render partial: "layouts/ranking"
