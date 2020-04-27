@@ -220,11 +220,9 @@ a{
 .contents_wra{
   width:100%;
   display: flex;
-  border: 1px solid blue;
 }
 .contents{
   width: 65%;
-  border: 1px solid pink;
 }
 .post_area{
   width: 75%;

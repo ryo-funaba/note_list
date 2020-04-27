@@ -12,7 +12,6 @@
         .note_mark
           ul
             li.note_star
-              
                 .note_star_wra
                   - if note.reviews.average(:rate).present?
                     i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
