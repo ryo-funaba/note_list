@@ -4,7 +4,7 @@
       ul
         li.index_title
           h2 最新レビュー
-        li.search_formn
+        li.search_form
             = form_tag('/notes/search', method: :get) do
               input.search__query name="keyword" placeholder="タイトルで検索" type="text" value=""
               button.btn_search title="検索" type="submit"
