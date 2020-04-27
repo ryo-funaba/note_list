@@ -551,6 +551,7 @@ a{
 .url_wra{
   height: 30px;
   width: 143px;
+  line-height: 30px;
   background-color: #2cb696;
   border-radius: 3px;
   text-align: center;
