@@ -409,7 +409,7 @@ a{
 .index_title_wrapper{
   height: 60px;
   width: 90%;
-  margin-top:40px;
+  margin-top:30px;
   margin-left: 40px;
 }
 .index_title_wrapper ul{
@@ -718,7 +718,6 @@ a{
 }
 .yield_container{
   width: 100%;
-  display: flex;
 }
 .ranking_container{
   height: 100%;
@@ -730,7 +729,7 @@ a{
   line-height: 60px;
   display: block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .ranking_wrap{
   height: 260px;
@@ -787,4 +786,16 @@ a{
   margin: 0 auto;
   overflow: hidden;
   font-size: 15px;
+}
+.notice_wrap{
+  width: 170px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: rgb(44,182,150);
+  border-radius: 3px;
+  opacity: 0.6;
 }

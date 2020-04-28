@@ -38,7 +38,12 @@ html
                 i.fas.fa-sign-in-alt   ログイン
        
       .yield_container
+        - if notice
+          .notice_wrap
+            = notice
+            
         = yield
+        
       .footer
         p
           | © 2020 ryo_funaba

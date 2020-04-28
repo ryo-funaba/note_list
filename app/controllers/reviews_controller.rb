@@ -10,7 +10,7 @@ class ReviewsController < RankingsController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to controller: :notes, action: :index
+      redirect_to root_path, notice: "投稿しました"
     else
       render "new"
     end
@@ -24,7 +24,7 @@ class ReviewsController < RankingsController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to note_path(@review.note)
+      redirect_to note_path(@review.note), notice: "修正しました"
     else
       render 'edit'
     end
@@ -33,7 +33,7 @@ class ReviewsController < RankingsController
   def destroy
     @review = Review.find(params[:id])
     if @review.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: "削除しました"
     else
       render 'edit'
     end
