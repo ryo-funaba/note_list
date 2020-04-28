@@ -41,7 +41,10 @@ html
         - if notice
           .notice_wrap
             = notice
-            
+        - if alert
+          .alert_wrap
+            = alert
+
         = yield
         
       .footer
