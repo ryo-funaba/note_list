@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :delete_all
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable 
       
   # validates :nickname, presence: true
   validates :nickname, presence: true, length: { minimum: 1,　maximum: 7 }
