@@ -22,6 +22,7 @@ gem 'kaminari'
 gem 'pry-rails'
 gem "selenium-webdriver"
 gem "jquery-rails"
+gem 'config'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
