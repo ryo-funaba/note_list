@@ -23,6 +23,8 @@ gem 'pry-rails'
 gem "selenium-webdriver"
 gem "jquery-rails"
 gem 'config'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
