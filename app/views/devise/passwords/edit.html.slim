@@ -1,22 +1,25 @@
-h2
-  | Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    br
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-      br
-    = f.password_field :password, autofocus: true, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Change my password"
-= render "devise/shared/links"
+.devise-wrapper
+  .devise-container
+    h2 パスワード再設定
+    .border-line
+    
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      = f.hidden_field :reset_password_token
+      
+      .label-wrapper
+        = f.label :password
+        = f.input :password, label:false, input_html: { class: 'form_input' }, autofocus: true
+      
+      .label-wrapper
+        = f.label :password_confirmation
+        = f.input :password_confirmation, label:false, input_html: { class: 'form_input' }, autofocus: true
+      
+      .label-wrapper
+        = f.submit "パスワード変更" ,class: "repass-btn"
+      
+      .border-line
+      
+      .more_link_box
+        .login-btn
+          = render "devise/shared/links"
