@@ -36,5 +36,4 @@ class Review < ApplicationRecord
     self.note = note
   end
 
-
 end
