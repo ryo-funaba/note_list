@@ -25,8 +25,7 @@
         p
           |まだレビューしていません
       - else
-        - @notes.each do |note|
-          = render partial: "/notes/note", locals: {note: note}
+        = render partial: "shared/note", collection: @notes
 
       = link_to root_path, class: "backToTop" do
         i.fas.fa-home  TOPに戻る
@@ -34,4 +33,4 @@
       .kaminari_wrap
         = paginate @notes, outer_window: 2
         
-  = render partial: "layouts/ranking"
+  = render partial: "shared/ranking"

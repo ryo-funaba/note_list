@@ -12,10 +12,9 @@
       .border_bottom    
     
     ul.note_area
-      - @notes.each do |note|
-        = render partial: "note", locals: {note: note}
+      = render partial: "shared/note", collection: @notes
       
       .kaminari_wrap
         = paginate @notes, outer_window: 2
    
-  = render partial: "layouts/ranking"
+  = render partial: "shared/ranking"
