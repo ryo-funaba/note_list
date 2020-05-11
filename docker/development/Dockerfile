@@ -32,7 +32,8 @@ RUN apk update \
         zlib-dev \
 
 #環境変数の設定
-ENV APP_HOME="/note"
+ENV APP_HOME="/note" \
+    SERVER_PORT=4000
 
 # 実行するディレクトリの指定
 RUN mkdir $APP_HOME
@@ -46,3 +47,5 @@ RUN gem install bundler
 RUN bundle install --jobs=4 --retry=3
 
 ADD . $APP_HOME
+
+EXPOSE $SERVER_PORT

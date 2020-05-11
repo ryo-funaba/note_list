@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+ database:
+   image: mysql:5.5.62
+   ports:
+     - 4306:3306
+   volumes:
+     - mysql-datavolume:/var/lib/mysql
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+
+ app:
+   build:
+     context: .
+     dockerfile: ./docker/development/Dockerfile
+   command: >
+     bash -c "
+       rm -f tmp/pids/server.pid &&
+       bundle exec rails s -p 4000 -b '0.0.0.0'
+     "
+   ports:
+     - "4000:4000"
+   volumes:
+     - .:/note
+     - "bundle:/usr/local/bundle"
+   depends_on:
+     - database
+   tty: true
+   stdin_open: true
+
+
+ volumes:
+   bundle:
+     driver: local
+   mysql-datavolume:
+     driver: local
