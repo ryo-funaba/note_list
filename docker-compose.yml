@@ -1,12 +1,12 @@
 version: '3'
 
 services:
- database:
+ db:
    image: mysql:5.5.62
    ports:
      - 4306:3306
    volumes:
-     - mysql-datavolume:/var/lib/mysql
+     - db-data:/var/lib/mysql
    environment:
      MYSQL_ROOT_PASSWORD: root
 
