@@ -11,18 +11,23 @@ services:
      - db-data:/var/lib/mysql
      - ./mysqlconf:/etc/mysql/conf.d
 
- app:
+ web:
    build:
      context: .
      dockerfile: ./docker/development/Dockerfile
    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
    ports:
-     - "4000:4000"
+     - "3000:3000"
    volumes:
      - .:/note
      - "bundle:/bundle"
    links:
       - db
+   environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: root
+      DATABASE_HOSTNAME: db
+      DATABASE_NAME: note_list
    tty: true
    stdin_open: true
 
