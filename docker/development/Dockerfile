@@ -1,4 +1,4 @@
-FROM  ruby:2.5.1-alpine
+FROM  ruby:2.6.5-alpine3.11
 LABEL maintainer="ryo_funaba<ryo278.0417@gmail.com>"
 # 文字コードの設定
 ENV LANG=C.UTF-8 \
@@ -38,8 +38,8 @@ RUN npm install -g yarn
 RUN gem install bundler
 RUN gem update
 #環境変数の設定
-ENV APP_HOME=/note
-ENV GEM_HOME=/bundle
+ENV APP_HOME=/note \
+    GEM_HOME=/bundle
 #作業ディレクトリ作成
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
