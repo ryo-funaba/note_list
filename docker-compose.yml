@@ -30,8 +30,8 @@ services:
    stdin_open: true
 
 
- volumes:
-   bundle:
-     driver: local
-   mysql-datavolume:
-     driver: local
+volumes:
+  bundle:
+    driver: local
+  mysql-datavolume:
+    driver: local
