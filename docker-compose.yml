@@ -4,8 +4,8 @@ services:
  db:
    image: mysql:5.5.62
    environment:
-     MYSQL_DATABASE: "note_development"
-     MYSQL_ROOT_PASSWORD: "password"
+     #MYSQL_DATABASE: "note_list"
+     MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
    ports:
      - 4306:3306
    volumes:
