@@ -4,7 +4,7 @@ services:
  db:
    image: mysql:5.5.62
    environment:
-     MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
    ports:
      - 4306:3306
    volumes:
@@ -15,6 +15,8 @@ services:
    build:
      context: .
      dockerfile: ./docker/development/Dockerfile
+   environment: 
+     MYSQL_ROOT_PASSWORD: 'pass'
    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
    ports:
      - "3000:3000"
@@ -23,11 +25,6 @@ services:
      - "bundle:/bundle"
    links:
       - db
-   environment:
-      DATABASE_USERNAME: root
-      DATABASE_PASSWORD: root
-      DATABASE_HOSTNAME: db
-      DATABASE_NAME: note_list
    tty: true
    stdin_open: true
 
