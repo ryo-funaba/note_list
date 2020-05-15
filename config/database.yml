@@ -10,7 +10,6 @@ default: &default
   host: db
   database: note_list
   port: 3306
-  #host: <%= ENV.fetch("MYSQL_HOST", "db") %>
 
 development:
   <<: *default
