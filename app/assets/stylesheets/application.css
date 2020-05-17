@@ -56,7 +56,6 @@ a{
 .header_menu{
   height: 70px;
   float:right;
-  /*border:solid 1px red;*/
   margin-right:10px;
   display: flex;
 }
