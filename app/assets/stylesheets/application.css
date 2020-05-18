@@ -85,7 +85,6 @@ a{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*border:1px solid black;*/
 }
 .devise-container h2{
   text-align: center;
