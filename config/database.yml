@@ -6,10 +6,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
+  socket: /tmp/mysql.sock
   host: localhost
   database: note_list
-  port: 3306
+  port: 3000
 
 development:
   <<: *default
