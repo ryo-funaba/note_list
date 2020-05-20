@@ -7,7 +7,7 @@ default: &default
   username: root
   password:
   socket: /var/lib/mysql/mysql.sock
-  host: db
+  host: localhost
   database: note_list
   port: 3306
 
