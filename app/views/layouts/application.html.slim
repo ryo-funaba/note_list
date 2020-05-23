@@ -2,22 +2,28 @@ doctype html
 html
   head
     title note List
-    |  <meta name="viewport" content="width=device-width, initial-scale=1.0" 
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
     link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all"
+    link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
 
   body
     .wrapper
+      - if notice
+        javascript: toastr.success(= notice);
+      - if alert
+        javascript: toastr.error(= alert);
+
       .header
         .header_title
           = link_to root_path
             = image_tag "/images/note_logo.png", class: "header_title-btn"
-              
-        
+
         ul.header_menu
           - if user_signed_in?
             li.header_button
@@ -36,17 +42,17 @@ html
             li.header_button
               = link_to new_user_session_path
                 i.fas.fa-sign-in-alt   ログイン
-       
+
       .yield_container
-        - if notice
+        /- if notice
           .notice_wrap
             = notice
-        - if alert
+        /- if alert
           .alert_wrap
             = alert
 
         = yield
-        
+
       .footer
         p
           | © 2020 ryo_funaba
