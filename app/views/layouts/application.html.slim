@@ -14,11 +14,6 @@ html
 
   body
     .wrapper
-      - if notice
-        javascript: toastr.success(= notice);
-      - if alert
-        javascript: toastr.error(= alert);
-
       .header
         .header_title
           = link_to root_path
@@ -56,3 +51,11 @@ html
       .footer
         p
           | © 2020 ryo_funaba
+
+    - flash.each do |name, message|
+      - if message.is_a?(String) && !Rails.env.test?
+        - case name.to_s
+        - when 'notice'
+          javascript: toastr.success('#{message}');
+        - when 'alert'
+          javascript: toastr.error('#{message}');
