@@ -5,14 +5,14 @@ jobs:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
           RAILS_ENV: test
-          DATABASE_HOSTNAME: '127.0.0.1'
+          DATABASE_HOSTNAME: 127.0.0.1
           DATABASE_NAME: note_list
           DATABASE_USERNAME: root
           DATABASE_PASSWORD: ''
           TZ: UTC
-      - image: circleci/mysql:5.7-ram
+      - image: circleci/mysql:5.7
         environment:
-          TZ: UTC
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
 
     working_directory: ~/circleci-rails
 
