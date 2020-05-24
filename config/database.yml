@@ -5,12 +5,12 @@ default: &default
   encoding: utf8
   charset: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: localhost
-  database: note_list
-  port: 3306
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOSTNAME'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
   socket: /tmp/mysql.sock
+  port: 3306
 
 development:
   <<: *default
