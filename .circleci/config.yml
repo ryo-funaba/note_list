@@ -61,15 +61,15 @@ jobs:
 
       # テスト実行
       - run:
-        name: テスト実行
-        command: |
-          mkdir /tmp/test-results
-          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-          bundle exec rspec --format progress \
-                          --format RspecJunitFormatter \
-                          --out /tmp/test-results/rspec.xml \
-                          --format progress \
-                          $TEST_FILES
+          name: テスト実行
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
 
 
       # テスト結果を保存
