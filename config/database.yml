@@ -9,7 +9,7 @@ default: &default
   socket: /tmp/mysql.sock
   host: localhost
   database: note_list
-  port: 3000
+  port: 3306
 
 development:
   <<: *default

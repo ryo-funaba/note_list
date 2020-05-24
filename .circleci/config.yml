@@ -1,12 +1,7 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
           RAILS_ENV: test
@@ -14,44 +9,44 @@ jobs:
           DB_USERNAME: 'root'
           DB_PASSWORD: ''
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/mysql:5.7
 
-    working_directory: ~/note_list
+    working_directory: ~/circleci-rails
 
     steps:
       - checkout
 
-      # Download and cache dependencies
+      # bundle installの結果をrestore
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # 上記でキャッシュのキーがない場合、最新キャッシュを取得する
+            - v1-dependencies-
 
+      # bundle install 実行
       - run:
-          name: install dependencies
+          name: bundle install 実行
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
+      # bundle install の結果をキャッシュ
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+      # データベースの起動を待機
       - run:
-          name: Wait for DB
+          name: データベースの起動を待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
 
-      # Database setup
+      # データベースのセットアップ
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-      # run tests!
+      # テスト実行
       - run:
-          name: run tests
+          name: テスト実行
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
@@ -62,7 +57,7 @@ jobs:
                             --format progress \
                             $TEST_FILES
 
-      # collect reports
+      # テスト結果を保存
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
