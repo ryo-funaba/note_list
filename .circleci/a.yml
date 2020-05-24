@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+          DB_USERNAME: 'root'
+          DB_PASSWORD: ''
+
+      - image: circleci/mysql:5.7
+
+    working_directory: ~/circleci-rails
+
+    steps:
+      - checkout
+
+      # bundle installの結果をrestore
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # 上記でキャッシュのキーがない場合、最新キャッシュを取得する
+            - v1-dependencies-
+
+      # bundle install 実行
+      - run:
+          name: bundle install 実行
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      # bundle install の結果をキャッシュ
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # データベースの起動を待機
+      - run:
+          name: データベースの起動を待機
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+
+      # データベースのセットアップ
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # テスト実行
+      - run:
+          name: テスト実行
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
+
+      # テスト結果を保存
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

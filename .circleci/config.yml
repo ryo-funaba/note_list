@@ -2,62 +2,76 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.5-node-browsers
+      # specify the version you desire here
+      - image: circleci/ruby:2.6.3-node-browsers
         environment:
           RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          DB_USERNAME: 'root'
-          DB_PASSWORD: ''
+          DATABASE_HOSTNAME: '127.0.0.1'
+          DATABASE_NAME: note_list
+          DATABASE_USERNAME: root
+          DATABASE_PASSWORD: ''
+          TZ: UTC
+      - image: circleci/mysql:5.7-ram
+        environment:
+          TZ: UTC
 
-      - image: circleci/mysql:5.7
+    # Specify service dependencies here if necessary
+    # CircleCI maintains a library of pre-built images
+    # documented at https://circleci.com/docs/2.0/circleci-images/
+    # - image: circleci/postgres:9.4
 
     working_directory: ~/circleci-rails
 
     steps:
       - checkout
 
-      # bundle installの結果をrestore
+      # https://discuss.circleci.com/t/using-bundler-2-0-during-ci-fails/27411/3
+      - run:
+          name: Configure Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+      - run:
+          name: Install Latest Google Chrome
+          command: |
+            sudo apt-get install libappindicator3-1
+            sudo curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome.deb
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # 上記でキャッシュのキーがない場合、最新キャッシュを取得する
-            - v1-dependencies-
-
-      # bundle install 実行
+            - gem-cache-v1-{{ checksum "Gemfile.lock" }}
+            - gem-cache-v1-
       - run:
-          name: bundle install 実行
+          name: default mysql client install
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-
-      # bundle install の結果をキャッシュ
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      # データベースの起動を待機
+            sudo apt update
+            sudo apt-get install default-mysql-client
       - run:
-          name: データベースの起動を待機
-          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+          name: bundle install
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+      # bundle installされたものcacheする
+      - save_cache:
+          key: gem-cache-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
-      # データベースのセットアップ
+      # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-      # テスト実行
+      # run tests!
       - run:
-          name: テスト実行
+          name: run tests
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
                             $TEST_FILES
-
-      # テスト結果を保存
+        # collect reports
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
