@@ -9,8 +9,8 @@ default: &default
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOSTNAME'] %>
   database: <%= ENV['DATABASE_NAME'] %>
-  socket: /tmp/mysql.sock
-  port: 3306
+  #socket: /tmp/mysql.sock
+  #port: 3306
 
 development:
   <<: *default
