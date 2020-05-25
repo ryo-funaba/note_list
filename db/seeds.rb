@@ -1,6 +1,3 @@
-require "csv"
-
-notes_csv = CSV.readlines("db/notes.csv")
-notes_csv.each do |row|
-  Note.create(url: row[1], title: row[2], title_image: row[3], creater: row[4], creater_image: row[5], like: row[6], price: row[7])
-end
+require "./db/seeds/notes.rb"
+require "./db/seeds/reviews.rb"
+require "./db/seeds/users.rb"

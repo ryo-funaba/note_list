@@ -1,0 +1,3 @@
+id,"email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","nickname"
+1,"asus6320i3@gmail.com","$2a$11$Od1wkJsHxugND4TVYthQKuu2N.0Hgl214popEPW932j/Bg6C7KDbq",NULL,NULL,NULL,"2020-05-21 09:37:00","2020-05-23 05:40:57","りょう"
+2,"example@gmail.com","$2a$11$peraQY1Xgt8ulmvPOiWaXOPUpViRSpcXgo.aPsUOzIk/b.Z7oM8sm",NULL,NULL,NULL,"2020-05-22 06:01:57","2020-05-22 06:01:57","けい"
