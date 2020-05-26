@@ -9,7 +9,6 @@ default: &default
   password:
   host: localhost
   database: note_list
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
