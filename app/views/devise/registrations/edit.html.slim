@@ -2,52 +2,52 @@
   .devise-container
     h2 アカウント編集
     .border-line
-    
+
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
-      
+
       .label-wrapper
         = f.label :email,'メールアドレス'
         = f.input :email, label:false, input_html: { class: 'form_input' }, autocomplete: "email"
-      
+
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         div
-          | Currently waiting confirmation for: 
+          | Currently waiting confirmation for:
           = resource.unconfirmed_email
-      
+
       .label-wrapper
         = f.label :password, "新パスワード"
         = f.input  :password, label:false, placeholder:"変更する場合のみ記入", input_html: { class: 'form_input' }, autocomplete: "new-password"
-        
+
       .label-wrapper
         = f.label :password_confirmation, "新パスワード(確認)"
         = f.input :password_confirmation, label:false, input_html: { class: 'form_input' }, autocomplete: "new-password"
-      
+
       .label-wrapper
         = f.label :current_password,"現在のパスワード"
         = f.input :current_password, label:false, input_html: { class: 'form_input' }, autocomplete: "current-password"
-      
+
       .label-wrapper
         = f.label :nickname,"ニックネーム"
         = f.input :nickname, label:false, input_html: { class: 'form_input' }
-      
+
       .field-wrapper
         = f.label :image,'プロフィール画像'
         = f.input :image, label:false, as: :file
-        - if current_user.image.present?
+        - if current_user.image.attached?
           .edit_image_wrapper
-            = image_tag current_user.image.variant(resize: '100x100'),class: "profile_image"            
-          
+            = image_tag current_user.image, class: "profile_image"
+
       = f.submit "更新する", class: "submit-btn"
-    
+
 
     = link_to root_path, class: "backToTop" do
       i.fas.fa-home  TOPに戻る
-      
+
     .border-line
-    
+
     h3 アカウント削除
-    .user_delete_area 
+    .user_delete_area
       p
         | 二度と元に戻せません<br>
          本当に削除してよろしいですか？

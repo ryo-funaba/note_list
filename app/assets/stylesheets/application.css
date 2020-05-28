@@ -105,7 +105,7 @@ a{
   width:200px;
   height: 20px;
   border-radius:4px;
-  background-color: #E5E5E5
+  background-color: #E5E5E5;
 }
 .field-wrapper{
   width:200px;
@@ -127,11 +127,14 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
+  width: 130%;
   /*border:1px solid red;*/
 }
 .submit-btn{
   width:200px;
   height: 30px;
+  line-height: 30px;
   font-size:20px;
   letter-spacing: 4px;
   margin:50px auto;
@@ -619,8 +622,8 @@ a{
   height: 35px;
   width: 35px;
   border-radius: 50%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   display: inline-block;
 }
 .no_user_image{

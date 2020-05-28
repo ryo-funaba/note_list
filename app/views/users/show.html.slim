@@ -4,13 +4,13 @@
       ul
         - if current_user.image.attached?
           li.user_image_wrapper
-            = image_tag current_user.image.variant(resize: '86x86'),class: "profile_image"
+            = image_tag current_user.image,class: "profile_image"
         - else
           li.user_image_wrapper
             = image_tag "/images/user_default.png",class: "profile_image"
         li.user_name
           = @user.nickname
-            
+
         li.user_edit_btn
           = link_to "アカウント編集", edit_user_registration_path
         li.search_form
@@ -19,7 +19,7 @@
             button.btn_search title="検索" type="submit"
                mi.fas.fa-search.seach_icon
       .border_bottom
-    
+
     ul.note_area
       - if @notes.empty?
         p
@@ -29,8 +29,8 @@
 
       = link_to root_path, class: "backToTop" do
         i.fas.fa-home  TOPに戻る
-      
+
       .kaminari_wrap
         = paginate @notes, outer_window: 2
-        
+
   = render partial: "shared/ranking"

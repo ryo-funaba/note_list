@@ -6,10 +6,10 @@
           = image_tag "/images/no_image.png", class: "title_image"
         - else
           = image_tag @note.title_image, class: "title_image"
-    
+
     .title_wra
       h3 = @note.title
-      
+
     .note_data
       ul
         li.like
@@ -20,7 +20,7 @@
             = @note.price
         li.url_wra
           = link_to "作品ページ", "#{@note.url}", :target=>["_blank"]
-          
+
     .creater_wra
       ul
         li.creater_image_wra
@@ -33,13 +33,13 @@
         li.rate_wra
           - if @note.reviews.average(:rate).present?
             i.fas.fa-star.show style="color:gold" = @note.reviews.average(:rate).round
-          
+
     .border_bottom2
-    
+
     .review_area
       h3
         i.far.fa-comments レビュー
-      - if @reviews.empty?  
+      - if @reviews.empty?
         .no_review_wrap
           p
             |レビューはまだありません
@@ -51,12 +51,12 @@
                 ul
                   li.review_image
                     - if review.user.image.attached?
-                      = image_tag review.user.image.variant(resize: '50x50'), class: "profile_image"
+                      = image_tag review.user.image, class: "profile_image"
                     - else
                       = image_tag "/images/user_default.png", class: "no_user_image"
                   li.review_name
                     = review.user.nickname
-                  
+
               .review_data
                 ul
                   li.review_star
