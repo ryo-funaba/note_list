@@ -7,11 +7,10 @@
 
 
 $(function() {
-  console.log("--------------------------------")
   toastr.options = {
       "closeButton": true,
-      "debug": true,
-      "positionClass": "toast-top-right",
+      "debug": false,
+      "positionClass": "toast-bottom-right",
       "onclick": null,
       "showDuration": "300",
       "hideDuration": "1000",
