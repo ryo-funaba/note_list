@@ -1,14 +1,16 @@
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require toastr_rails
 //= require_tree .
 
-$(document).ready(function() {
+
+$(function() {
+  console.log("--------------------------------")
   toastr.options = {
       "closeButton": true,
-      "debug": false,
+      "debug": true,
       "positionClass": "toast-top-right",
       "onclick": null,
       "showDuration": "300",
@@ -18,6 +20,7 @@ $(document).ready(function() {
       "showEasing": "swing",
       "hideEasing": "linear",
       "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
+      "hideMethod": "fadeOut",
+      "progressBar": true
   }
 });

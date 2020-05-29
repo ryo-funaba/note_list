@@ -25,7 +25,7 @@ gem "jquery-rails"
 gem 'config'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem "toastr-rails"
+gem "toastr_rails"
 gem "aws-sdk-s3", require: false
 
 
