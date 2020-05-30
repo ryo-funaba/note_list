@@ -2,9 +2,9 @@
   .ranking_container
     .rank_title
       h3
-        i.fas.fa-crown 注目度ランキング 
+        i.fas.fa-crown 注目度ランキング
       .border_bottom
-      
+
     ul
       - @ranking.each.with_index(1) do |ranking, index|
         = link_to ranking

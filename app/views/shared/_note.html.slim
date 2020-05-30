@@ -15,11 +15,12 @@
                 .note_star_wra
                   - if note.reviews.average(:rate).present?
                     i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
-                
+
             li.note_price
-              - if note.price.present?
+              - if !note.price. == "NULL"
                 .note_price_wra
                   = note.price
             li.note_like
-              - if note.like.present?
-                i.far.fa-heart style="color:red" = note.like
+              .note_like_wra
+                - if note.like.present?
+                  i.far.fa-heart style="color:red" = note.like

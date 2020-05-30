@@ -483,6 +483,13 @@ a{
   height: 30px;
   width: 159px;
 }
+.note_like_wra{
+  height: 20px;
+  width: 100px;
+  line-height: 30px;
+  display: block;
+  margin: 5px auto;
+}
 .far.fa-heart{
   height: 20px;
   width: 60px;
