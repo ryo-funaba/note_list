@@ -34,5 +34,9 @@
       strong
         | すでにアカウントを持っていますか？<br>
 
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.hidden_field :email, value: "test@test.com"
+          = f.hidden_field :password, value: "test1234"
+          = f.submit 'テストログイン', class: 'test_login_btn'
       .login-btn
         = render "devise/shared/links"

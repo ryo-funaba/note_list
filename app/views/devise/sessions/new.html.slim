@@ -26,6 +26,10 @@
       .border-line
 
       .more_link_box
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.hidden_field :email, value: "test@test.com"
+          = f.hidden_field :password, value: "test1234"
+          = f.submit 'テストログイン', class: 'test_login_btn'
         .login-btn
           = link_to "新規登録", new_registration_path(resource_name)
         .forgot-pass
