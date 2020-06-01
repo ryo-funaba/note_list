@@ -1,60 +1,44 @@
-# 環境構築
+# note List
 
-**1: 下記のURLのリポジトリをCloneする。**
+## 1. サービス概要
+note Listは[note](https://note.com/)専用の**レビュー投稿サイト**です。<br>
 
-```
-$ git clone https://github.com/ryo-funaba/note_list.git
+コンテンツ配信プラットフォームである「note」にはレビュー機能がありません。<br>
+そのため有料noteを購入しようか迷った時は、口コミが無くて少し不安になってしまいます。<br>
+実際、商品を購入する際にレビューや口コミを参考にする人は**90%以上**と言われております。<br>
 
-    # この作業でリモートリポジトリ -> 自分のPC（ローカル）へコピーが完了。 
-    
-$ cd note_list
-
-    # note_listフォルダへ移動。
-    
-$ git branch
-
-    # 念の為、ブランチの確認。現在のブランチは master
-```
-
-**2:自分のPC上（ローカルリポジトリ）にて下記の作業を実施**
-
-```
-$ git checkout account_edit
-
-$ bundle install
-```
-
-※bundle installした時に、mysql2のGemがインストールされない可能性があります。
-
-その場合は、sqlite3に変更して対応。
-
-Gemfile
-```
-# gem 'mysql2', '0.5.2' //ここをコメントアウト。代わりに下記を記載。
-*gem 'sqlite*
-```
-
-config/database.yml
-```
-default: &default
-  // adapter: mysql2 ここをコメントアウト。代わりに下記を記載。
-  *adapter**: sqlite3*
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /var/lib/mysql/mysql.sock
-```
-
-**3:DBの作成 〜 ローカル上での確認**
-```
-$ rails db:create # DB作成
-$ rails db:migrate # テーブル作成
-```
-```
-$ rails s
-```
-
-`http://localhost:3000`にアクセスしてログイン画面が表示されればOK。
+note Listは購入時の不安を解決し、少しでも有益な口コミを広めるために生まれました。
 
 
+## 2. URL
+http://www.note-list.tk/<br>
+ログイン画面から**テストユーザー**としてログインできます。投稿機能の確認のために使用できます。
+
+
+## 3. 技術スタック
+### 言語・フレームワーク
+- Ruby 2.6.5
+- Ruby on Rails 5.2.4
+### 開発環境
+- Docker
+- MySQL
+### テスト環境
+- RSpec
+- CircleCI（自動テスト）
+### 本番環境
+- AWS（EC2・RDS・S3・Route53）
+- Unicorn（アプリケーションサーバー）
+- Nginx（Webサーバー）
+
+## 4. インフラ構成図
+
+
+## 5. その他機能一覧
+- ユーザー登録機能（devise）
+- ログイン・ログアウト機能（devise）
+- 管理ユーザー機能（devise）
+- ユーザー画像アップロード機能（Active Storage）
+- レビュー投稿機能（スクレイピング : Selenium）
+- ランキング表示機能
+- 検索機能
+- ページネーション機能（kaminari）
