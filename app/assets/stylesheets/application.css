@@ -123,6 +123,14 @@ a{
   display: inline-block;
   overflow: hidden;
 }
+.default_profile_image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 350%;
+  width: 350%;
+}
 .profile_image{
   position: absolute;
   top: 50%;
