@@ -17,7 +17,7 @@
                     i.fas.fa-star style="color:gold" = note.reviews.average(:rate).round
 
             li.note_price
-              - if !note.price. == "NULL"
+              - if note.price != "NULL"
                 .note_price_wra
                   = note.price
             li.note_like

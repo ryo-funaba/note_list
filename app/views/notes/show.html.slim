@@ -16,7 +16,7 @@
           - if @note.like
             i.far.fa-heart.show style="color:red" = @note.like
         li.price
-          - if @note.price
+          - if @note.price != "NULL"
             = @note.price
         li.url_wra
           = link_to "作品ページ", "#{@note.url}", :target=>["_blank"]
