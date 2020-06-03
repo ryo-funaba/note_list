@@ -1,47 +1,48 @@
 class ReviewsController < RankingsController
-  
+
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  
-  
+  before_action :set_review, only: [:edit, :update, :destroy]
+
   def new
     @review = Review.new
   end
-  
+
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to root_path, notice: "投稿しました"
+      redirect_to controller: :notes, action: :index
     else
-      render "new"
+      render :new
     end
   end
-  
+
   def edit
-    @review = Review.find(params[:id])
-    @note = Note.where(id: @review.note_id)
+    @note = @review.note
   end
-  
+
   def update
-    @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to note_path(@review.note), notice: "修正しました"
+      redirect_to note_path(@review.note)
     else
-      render 'edit'
+      render :edit
     end
   end
-  
+
   def destroy
-    @review = Review.find(params[:id])
     if @review.destroy
-      redirect_to root_path, notice: "削除しました"
+      redirect_to root_path
     else
-      render 'edit'
+      render :edit
     end
   end
-  
+
   private
+
   def review_params
     params.require(:review).permit(:rate ,:review, :url).merge(user_id: current_user.id)
   end
-  
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
 end

@@ -1,29 +1,29 @@
-.contents_wra  
+.contents_wra
   .contents
     .post_area
       h2 投稿画面
-      
+
       = simple_form_for(@review) do |f|
         /= f.error_notification
         /= f.full_error :review
-        
+
         - if @review.errors.any?
           h4.text-danger
             | エラーが
             = @review.errors.count
             | 件あります
-  
+
         .review_label
           = f.label :url, "レビュー先URL"
           = f.input :url, label:false, input_html: { class: 'url_input'}, autofocus: true
-      
+
         .review_label
           = f.input :rate,  label:"評価", hint: "5段階", input_html: { class: 'rate_input', value:5, min:1, max:5}, label_html: { class: 'rate_label'}, hint_html: { class: 'rate_hint'}, required: false
-        
+
         .review_label
           = f.label :review, "レビュー"
           = f.input :review, label:false, input_html: { class: 'review_input' }
-  
+
         = f.button :submit, "投稿する", class: "post-btn"
-      
+
   = render partial: "shared/ranking"
