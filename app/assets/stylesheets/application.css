@@ -83,7 +83,7 @@ a{
 }
 .devise-container{
   width: 550px;
-  margin:30px auto;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
