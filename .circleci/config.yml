@@ -92,13 +92,13 @@ jobs:
 workflows:
   version: 2
   build_and_deploy:
-      jobs:
-        - build
-        - deploy:
-          requires:
-            # build ジョブに依存してるので、先に build ジョブを実行する
-            - build
-          # master ブランチに push された場合のみ deploy
-          filters:
-            branches:
-              only: master
+    jobs:
+      - build
+      - deploy:
+        requires:
+          # build ジョブに依存してるので、先に build ジョブを実行する
+          - build
+        # master ブランチに push された場合のみ deploy
+        filters:
+          branches:
+            only: master
