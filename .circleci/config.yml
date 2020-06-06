@@ -81,13 +81,13 @@ jobs:
 
   deploy:
     machine:
-        image: circleci/classic:edge
+      image: circleci/classic:edge
     steps:
-        - checkout
-        # CircleCI に登録した秘密鍵を呼び出す
-        - add_ssh_keys:
-        # CircleCI に登録した環境変数を使って SSH
-        - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /var/www/projects/note_list/ && git pull origin master'
+      - checkout
+      # CircleCI に登録した秘密鍵を呼び出す
+      - add_ssh_keys:
+      # CircleCI に登録した環境変数を使って SSH
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /var/www/projects/note_list/ && git pull origin master'
 
 workflows:
   version: 2
@@ -95,10 +95,10 @@ workflows:
     jobs:
       - build
       - deploy:
-        requires:
-          # build ジョブに依存してるので、先に build ジョブを実行する
-          - build
-        # master ブランチに push された場合のみ deploy
-        filters:
-          branches:
-            only: master
+          requires:
+            # build ジョブに依存してるので、先に build ジョブを実行する
+              - build
+          # master ブランチに push された場合のみ deploy
+          filters:
+            branches:
+              only: master
