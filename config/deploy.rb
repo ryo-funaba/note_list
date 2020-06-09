@@ -3,7 +3,7 @@
 lock '3.14.0'
 
 # Capistranoのログの表示に利用する
-set :application, 'note List'
+set :application, 'note_List'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:ryo-funaba/note_list.git'
@@ -29,6 +29,7 @@ set :log_level, :debug
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
+  desc 'Restart application'
   task :restart do
     invoke 'unicorn:restart'
   end
