@@ -29,7 +29,7 @@ https://www.note-list.tk/<br>
 - RSpec
 - CircleCI（自動テスト）
 ### 本番環境
-- AWS（EC2・RDS・S3・Route53）
+- AWS（EC2・RDS・S3・Route53・ALB・ACM）
 - Unicorn（アプリケーションサーバー）
 - Nginx（Webサーバー）
 
