@@ -18,10 +18,17 @@ set :linked_files, fetch(:linked_files, []).push('config/master.key', 'config/da
 # シンボリックリンクをはるフォルダ
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+set :rbenv_type, :user
+set :rbenv_ruby, '2.6.5'
+
+set :ssh_options, auth_methods: ['publickey'], keys: ['~/.ssh/aws/note_list.pem']
+
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+
 # 保持するバージョンの個数
 set :keep_releases, 2
-
-set :rbenv_ruby, '2.6.5'
 
 #出力するログのレベル。
 set :log_level, :debug
