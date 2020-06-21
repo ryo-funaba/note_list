@@ -10,15 +10,7 @@ note Listは[note](https://note.com/)専用の**レビュー投稿サイト**で
 
 note Listは購入時の不安を解決し、少しでも有益な口コミを広めるために生まれました。
 
-
-## 2. URL
-https://www.note-list.tk/<br>
-**テストユーザー**としてログインできます。投稿機能の確認のために使用できます。<br>
-メールアドレス : test@test.com<br>
-パスワード : test1234
-
-
-## 3. 技術スタック
+## 2. 技術スタック
 ### 言語・フレームワーク
 - Ruby 2.6.5
 - Ruby on Rails 5.2.4
@@ -33,11 +25,11 @@ https://www.note-list.tk/<br>
 - Unicorn（アプリケーションサーバー）
 - Nginx（Webサーバー）
 
-## 4. インフラ構成図
+## 3. インフラ構成図
 ![note_list_aws](https://user-images.githubusercontent.com/59598693/83466728-f5037580-a4b2-11ea-96dc-9ae2934c7473.png)
 
 
-## 5. その他機能一覧
+## 4. その他機能一覧
 - ユーザー登録機能（devise）
 - ログイン・ログアウト機能（devise）
 - 管理ユーザー機能（devise）
