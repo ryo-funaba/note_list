@@ -4,6 +4,10 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :reviews, dependent: :delete_all
+  has_many :relationships
+  has_many :followings, through: :relationships, source: :follow
+  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+  has_many :followers, through: :reverse_of_relationships, source: :user
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
