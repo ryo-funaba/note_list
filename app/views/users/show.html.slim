@@ -2,17 +2,17 @@
   .contents
     .user_info
       ul
-        - if current_user.image.attached?
+        - if @user.image.attached?
           li.user_image_wrapper
-            = image_tag current_user.image,class: "profile_image"
+            = image_tag @user.image,class: "profile_image"
         - else
           li.user_image_wrapper
             = image_tag "/images/user_default.png",class: "default_profile_image"
         li.user_name
           = @user.nickname
-
-        li.user_edit_btn
-          = link_to "アカウント編集", edit_user_registration_path
+        - if current_user == @user.id
+          li.user_edit_btn
+            = link_to "アカウント編集", edit_user_registration_path
         li.search_form
           = form_tag('/notes/search', method: :get) do
             input.search__query name="keyword" placeholder="作品名で検索" type="text" value=""

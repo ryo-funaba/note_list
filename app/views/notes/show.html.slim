@@ -47,15 +47,16 @@
         ul
           - @reviews.each do |review|
             li.review_wrap
-              .reviewer
-                ul
-                  li.review_image
-                    - if review.user.image.attached?
-                      = image_tag review.user.image, class: "profile_image"
-                    - else
-                      = image_tag "/images/user_default.png", class: "no_user_image"
-                  li.review_name
-                    = review.user.nickname
+              ul
+                = link_to user_path(review.user)
+                  .reviewer
+                    li.review_image
+                      - if review.user.image.attached?
+                        = image_tag review.user.image, class: "profile_image"
+                      - else
+                        = image_tag "/images/user_default.png", class: "no_user_image"
+                    li.review_name
+                      = review.user.nickname
 
               .review_data
                 ul

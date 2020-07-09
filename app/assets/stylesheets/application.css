@@ -637,9 +637,8 @@ a{
 .reviewer{
   height: 35px;
   width: 100%;
-}
-.reviewer ul{
   display: flex;
+
 }
 .review_image{
   height: 35px;
