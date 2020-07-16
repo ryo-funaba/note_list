@@ -10,9 +10,11 @@
             = image_tag "/images/user_default.png",class: "default_profile_image"
         li.user_name
           = @user.nickname
-        - if current_user == @user.id
+        - if current_user == @user
           li.user_edit_btn
             = link_to "アカウント編集", edit_user_registration_path
+        - else
+            = render partial: "follow-form"
         li.search_form
           = form_tag('/notes/search', method: :get) do
             input.search__query name="keyword" placeholder="作品名で検索" type="text" value=""

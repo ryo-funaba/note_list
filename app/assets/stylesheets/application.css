@@ -351,6 +351,9 @@ a{
   background-color: rgba(44,182,150,0.7);
   cursor: pointer;
 }
+#follow_form{
+  border: 1px solid red;
+}
 .user_delete_area{
   width:400px;
   margin:10px auto;

@@ -1,6 +1,6 @@
 - if user_signed_in? && @user != current_user
   #follow_form
     - if current_user.following?(@user)
-      = render "unfollow_btn"
+      = render "unfollow-btn"
     - else
-      = render "follow_btn"
+      = render "follow-btn"
