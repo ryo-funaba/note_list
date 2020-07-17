@@ -352,7 +352,26 @@ a{
   cursor: pointer;
 }
 #follow_form{
+  margin-left: 25px;
+  border: 1px solid pink;
+}
+.unfollow_btn{
   border: 1px solid red;
+}
+.follow_btn{
+  height: 30px;
+  width: 150px;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+  color: #2cb696;
+  background-color: white;
+  border: 1px solid #2cb696;
+}
+.follow_btn:hover{
+  background-color: rgba(44,182,150,0.1);
+  cursor: pointer;
 }
 .user_delete_area{
   width:400px;
