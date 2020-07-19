@@ -356,11 +356,20 @@ a{
   border: 1px solid pink;
 }
 .unfollow_btn{
-  border: 1px solid red;
+  height: 30px;
+  width: 130px;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+.unfollow_btn:hover{
+  background-color: rgba(44,182,150,0.1);
+  cursor: pointer;
 }
 .follow_btn{
   height: 30px;
-  width: 150px;
+  width: 130px;
   border-radius: 4px;
   font-size: 20px;
   margin-top: 15px;

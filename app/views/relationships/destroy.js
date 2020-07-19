@@ -1,1 +1,1 @@
-$("#follow_form").html("<%= j(render("users/follow_btn")) %>");
+$("#follow_form").html("<%= j(render("users/follow-btn")) %>");

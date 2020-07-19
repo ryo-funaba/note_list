@@ -1,1 +1,1 @@
-$("#follow_form").html("<%= j(render("users/unfollow_btn")) %>");
+$("#follow_form").html("<%= j(render("users/unfollow-btn")) %>");
