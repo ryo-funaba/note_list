@@ -362,6 +362,8 @@ a{
   font-size: 20px;
   margin-top: 15px;
   text-align: center;
+  color: white;
+  background-color: #2cb696;
 }
 .unfollow_btn:hover{
   background-color: rgba(44,182,150,0.1);
