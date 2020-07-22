@@ -366,7 +366,7 @@ a{
   background-color: #2cb696;
 }
 .unfollow_btn:hover{
-  background-color: rgba(44,182,150,0.1);
+  background-color: rgba(44,182,150,0.7);
   cursor: pointer;
 }
 .follow_btn{
