@@ -10,6 +10,4 @@ class RelationshipsController < ApplicationController
     current_user.unfollow(@user)
   end
 
-  private
-
 end
