@@ -1,2 +1,2 @@
-= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f|
+= form_for(current_user, url: relationship_path(user), method: :delete, remote: true) do |f|
   = f.submit "フォロー解除", class: "unfollow_btn"
