@@ -353,6 +353,7 @@ a{
 }
 #follow_form{
   margin-left: 25px;
+  border: 1px solid pink;
 }
 .unfollow_btn{
   height: 30px;
@@ -362,6 +363,7 @@ a{
   margin-top: 15px;
   text-align: center;
   color: white;
+  border: 1px solid blue;
   background-color: #2cb696;
 }
 .unfollow_btn:hover{
