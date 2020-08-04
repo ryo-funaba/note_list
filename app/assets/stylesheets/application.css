@@ -353,7 +353,7 @@ a{
 }
 #follow_form{
   margin-left: 25px;
-  /* border: 1px solid pink; */
+  border: 1px solid pink;
 }
 .unfollow_btn{
   height: 30px;
