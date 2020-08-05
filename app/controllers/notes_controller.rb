@@ -10,6 +10,6 @@ class NotesController < RankingsController
   end
 
   def search
-   @notes = Note.where('title LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(7)
+    @notes = Note.where('title LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(7)
   end
 end
