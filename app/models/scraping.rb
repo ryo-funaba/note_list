@@ -25,7 +25,7 @@ class Scraping
       creater: creater.present? ? creater : nil,
       creater_image: creater_image.present? ? creater_image : nil,
       like: like.present? ? like : nil,
-      price: price.present? ? price : nil
+      price: price.present? ? price : nil,
     }
   end
 
