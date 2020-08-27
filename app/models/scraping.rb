@@ -28,5 +28,4 @@ class Scraping
       price: price.present? ? price : nil,
     }
   end
-
 end
