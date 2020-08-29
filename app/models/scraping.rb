@@ -15,7 +15,6 @@ class Scraping
     creater_image = driver.find_element(:xpath, '//*[@id="__layout"]/div/div[2]/main/article/div[1]/div/div/div[2]/div/a/div/img')[:src] if driver.find_elements(:xpath, '//*[@id="__layout"]/div/div[2]/main/article/div[1]/div/div/div[2]/div/a/div/img').size > 0
     like = driver.find_element(:class, 'o-noteContentText__likeCount').text if driver.find_elements(:class, 'o-noteContentText__likeCount').size > 0
     price = driver.find_element(:xpath, '//*[@id="__layout"]/div/div[2]/main/article/div[1]/div/div/div[2]/div/div[2]/div/button/div').text if driver.find_elements(:xpath, '//*[@id="__layout"]/div/div[2]/main/article/div[1]/div/div/div[2]/div/div[2]/div/button/div').size > 0
-
     driver.quit
 
     {
